@@ -1,0 +1,166 @@
+Seção 2: Aplicações Web com Asp .NET
+
+3. O que vamos aprender nesta seção?
+
+4. .Net Framework, .Net Core, Mono
+
+NET Framework
+
+O .NET Framework é um framework de software desenvolvido pela Microsoft que roda principalmente em Microsoft Windows.
+Inclui uma grande biblioteca, fornece interoperabilidade de linguagem através de várias linguagens de programação. Programas escritos para o .NET Framework
+executam em um ambiente de software (em contraste com ambiente de hardware), conhecido como o Common Language Runtime (CLR), uma máquina virtual do
+aplicativo que fornece serviços como segurança, gerenciamento de memória e manipulação de exceções.
+
+A biblioteca de classes e CLR, juntos, constituem o .NET Framework
+
+
+
+
+.NET Core
+
+Core continua sendo um framework, uma nova versão, é de fato o .NET Framework reescrito.
+Foi construído encima de uma estrutura de APIs. 
+Podemos dizer que .NET Core é um contrato de API.
+Multi-plataforma. Open source.
+
+
+Core vs Framework
+
+- .NET Framework ainda é suportado porque a indústria baseada nas ferramentas Microsoft atualmente ainda usa fortemente.
+- .NET Framework ainda possui certos tipos de aplicativos que somente podem ser desenvolvidos com este Framework.
+- Para novos projetos de forma geral é melhor fazer no .NET Core e apontando para o .NET Standard.
+- Você não precisa de Visual Studio e nem Windows para desenvolver para .NET
+
+
+Mono
+É uma biblioteca .Net para Linux
+https://www.mono-project.com/
+- Open source
+- Cross Platform
+“Patrocinado pela Microsoft, o Mono é uma implementação de código aberto do .NET Framework da Microsoft, com base nos padrões ECMA
+para C # e Common Runtime. Uma família crescente de soluções e uma comunidade ativa e entusiástica contribuem para que a Mono se torne a
+principal opção para o desenvolvimento de aplicativos de plataforma cruzada.
+
+E o .NET Standard?
+Antes cada Framework tinha seu BCL (Base class library) 
+
+.NET Standard é uma biblioteca de classes para unificar todas as plataformas.
+Escrever código para a biblioteca Standard nos garante compatibilidade entre plataformas.
+.NET Standard é um contrato de API que deve ser respeitado por todos os que pretendem implementar .NET
+Inclusive bibliotecas separadas como o Mono
+
+
+5. Tipos de aplicações Web.
+
+Com o .NET Framework, .NET Core e o C# podemos desenvolver uma ampla variedade de aplicações e para uma
+enorme quantidade de plataformas.
+
+Dentro do espectro das aplicações Web temos algumas opções de desenvolvimento:
+
+- Asp.NET MVC
+- Aplicação WebForms
+- Web API + Front-End
+
+
+WEB
+
+Web Forms
+ASP NET MVC
+Web API
+Windows Communication Foundation (WCF)
+
+
+
+Web Forms
+
+O ASP.NET Web Forms faz parte da estrutura de aplicativos Web do ASP.NET e está incluído
+no Visual Studio. É um dos modelos de programação que você pode usar para criar aplicativos Web ASP.NET.
+
+Usando o Visual Studio, você pode criar Web Forms do ASP.NET. O ambiente de desenvolvimento integrado do
+Visual Studio (IDE) permite que você arraste e solte os controles do servidor para organizar sua página WebForms.
+
+Você pode definir facilmente propriedades, métodos e eventos para controles na página.
+Essas propriedades, métodos e eventos são usados para definir o comportamento e a aparência.
+Para escrever o código do servidor para manipular a lógica da página, você pode usar a linguagem .NET com
+Visual Basic ou C#.
+
+
+ASP NET MVC
+
+
+O ASP.NET MVC é um padrão para a construção de aplicativos Web utilizando o ASP.NET.
+Este padrão implica a separação do design em três partes, Model, View e Controller.
+
+Este padrão ajuda na separação das partes integrates da aplicação Web, separando claramente o que 
+é Front-end e Back-end.
+
+É o padrão de desenvolvimento Web mais utilizado dentro do .NET.
+
+
+Web API
+
+O ASP.NET facilita a criação de serviços que atingem uma ampla gama de clientes, incluindo navegadores e dispositivos móveis.
+
+Com o ASP.NET, você usa a mesma estrutura e padrões para criar páginas e serviços da Web, lado a lado no mesmo projeto.
+
+
+Com Web API você pode criar serviços REST que serão consumidores mais tarde por um Front-end.
+
+Uma aplicação Web pode ser criada para consumir serviços Web API sem necessidade de seguir o padrão MVC neste caso.
+
+
+
+Conteúdo do Curso
+
+O curso terá como foco o desenvolvimento Web com ASP.NET MVC.
+
+
+
+
+6. Instalação e configuração do ambiente no Windows
+
+
+A ferramenta de trabalho principal neste curso vai ser o Visual Studio 2019 Community
+É grátis.
+
+https://visualstudio.microsoft.com
+
+
+
+7. Instalação e configuração do ambiente no Linux e Mac
+
+Visual Studio Code.
+
+-https://code.visualstudio.com/
+
+Baixar e instalar o SDK do .Net Core
+Para testar se o SDK foi instalado escreva numa janela de comando:
+Dotnet --version
+
+
+Opção Mono Develop
+
+https://www.monodevelop.com
+
+
+8. Instalação passo a passo do ambiente no Mac
+
+https://visualstudio.microsoft.com/pt-br/vs/mac/
+
+
+9. Como criar um projeto usando Visual Studio e por linha de comando
+
+New Project > ASP.NET Core Web App (Model-View-Controller)
+
+Projeto LojaWeb e Solution LojaVirtual
+
+
+Diretamente no Console
+
+ dotnet new mvc
+ dotnet run
+
+10. Recapitulando
+
+
+
