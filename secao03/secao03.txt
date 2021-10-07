@@ -126,6 +126,106 @@ Quando criamos um projeto Asp.NET MVC, o processo de criação da solução já organ
 
 15. Breve introdução à WEB
 
+Como funciona a Web
+
+A Web funciona em cima do protocolo HTTP, Hypertext Transfer Protocol.
+
+Temos outros também, FTP, SMTP...
+
+Protocolo é uma convenção, isto é, um acordo sobre como a comunicação deve funcionar. Em outras palavras, para o intercambio de dados é necessário falar a mesma
+língua.
+
+O Http é um mensageiro, ele leva e traz as informações ente computadores conectados a Web (teia).
+Funciona em cima do TCP/IP (transmision control protocol/internet protocol), outro protocolo (existe UDP também).
+
+Como em quase tudo, a internet funciona em camadas, cada uma com a sua responsabilidade.
+
+- Aplicação. É aqui que os programas cliente interatuam usando protocolos como o HTTP (browsers), FTP (transferência de arquivos) ou SMTP (e-mails)
+- Transporte. TCP ou UDP. A camada de aplicação “conversa” com a camada de transporte usando uma porta. No caso do HTTP normalmente é a famosa porta 80. A
+camada de transporte vai dividir a informação em “pacotes” e os encaminhar pela internet usando o caminho mais curto disponível.
+- Cada pacote usa o internet protocol (IP) para saber a origem e o destino dentro da rede.
+- Camada de rede. Infra física onde aqueles pacotes vão viajar.
+
+
+Podemos usar o Http para enviar texto, imagens, som, vídeo, documentos, etc
+
+Basicamente funciona num sistema de pergunta e resposta. Quando dois lados se comunicam um funciona como servidor e outro como cliente.
+
+O cliente faz uma pergunta ao servidor (requisição), o servidor responde processando a requisição e devolvendo uma mensagem para o cliente servindo os dados
+demandados (resposta).
+
+
+Este sistema de requisição-resposta pode ser de vários tipos diferentes.
+
+Esses tipos são os famosos verbos.
+
+Toda a Web funciona encima do ciclo Request-Response.
+
+
+Mas como funciona tudo?
+Primeiro, você e o servidor estão conectados usando uma rede física, infraestrutura que consiste em servidores, cabos, wi-fi, switchs, etc.
+Segundo, existe o protocolo TCP/IP que permite a conexão e trafego de informação usando essa rede.
+Terceiro, quando esta conexão está estabelecida, é aqui que o cliente envia um Request HTTP (requisição) para o servidor.
+Quarto, o servidor processa o Request e envia uma resposta em forma de mensagem Response HTTP para o cliente.
+Aqui o ciclo fecha-se.
+
+
+Mensagem HTTP Request
+
+A mensagem HTTP contem normalmente 2 partes.
+- Uma linha que sinaliza o começo da mensagem (Get + recurso solicitado).
+- Um encabeçado Headers.
+
+Mensagem HTTP Response
+A mensagem HTTP contem normalmente 3 partes.
+- Uma linha que sinaliza o começo da mensagem (status).
+- Um encabeçado Headers.
+- Um corpo Body.
+
+Uma mensagem de Request é diferente de uma mensagem de Response, contém informação diferente.
+
+Request normalmente tem o tipo do método (GET, POST), a versão do protocolo usada, uma serie de valores ou parâmetros e pode ter um conteúdo.
+
+Response normalmente tem um status code, a versão do protocolo, e o corpo da resposta.
+
+Métodos ou verbos HTTP
+
+São basicamente ordens que você envia ao servidor. Com essas ordens o servidor sabe que tipo de operação estamos querendo realizar.
+
+GET normalmente é para pedir uma informação ao servidor, por exemplo, quando queremos mostrar uma página Web.
+
+POST é para enviar uma informação ao servidor, por exemplo, enviar um correio eletrônico ou realizar uma compra online.
+
+DELETE é para apagar algum valor do servidor.
+
+etc.
+
+Status codes
+
+Quando um cliente faz um request a um servidor, o servidor o processa e responde com um código de estado.
+
+Por exemplo, se tudo deu certo o servidor vai responder com um 200 OK.
+
+Mas, se houve um erro ou o recurso que estamos pedindo não existe, receberemos o famoso 404: file not found.
+
+Existem muitos status codes, cada um representa um estado da resposta.
+
+
+Respostas de informação (100-199),
+
+Respostas de sucesso (200-299),
+
+Redirecionamentos (300-399).
+
+Erros do cliente (400-499).
+
+Erros do servidor (500-599).
+
+
+
+HomeController.cs
+
+
 16. Criação de Models
 
 17. Uso de Viewbags e Viewdata

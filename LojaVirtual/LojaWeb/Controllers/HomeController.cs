@@ -11,17 +11,23 @@ namespace LojaWeb.Controllers
 {
     public class HomeController : Controller
     {
-
+        //Get
         public IActionResult Index()
         {
             return View();
         }
-
+        //Get
         public IActionResult Privacy()
         {
             return View();
         }
+        //Post
+        [HttpPost]
+        public IActionResult Privacy(string Id, string Nome)
+        {
+            return View();
+        }
 
-       
+
     }
 }
