@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\LojaVirtual",
-    "\\LojaVirtual\\LojaWeb",
-    "\\LojaVirtual\\LojaWeb\\Views\\Home"
+    "\\LojaVirtual\\LojaWeb"
   ],
+  "SelectedNode": "\\LojaVirtual\\LojaWeb\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

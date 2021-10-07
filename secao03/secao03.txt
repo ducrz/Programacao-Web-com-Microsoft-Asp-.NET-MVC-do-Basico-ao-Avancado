@@ -74,6 +74,53 @@ Mas a ideia de todos eles é a mesma, separar cada parte da aplicação Web segundo
 14. Controllers
 
 
+Controllers
+
+São classes especializadas que herdam da classe “Controller” do Framework.
+
+Funcionam como um policial de trânsito que controla o fluxo de demandas entre uma View e um Model.
+
+Para cada ação que o usuário da aplicação web demandar, haverá uma ação também representada no controller.
+
+
+Cada Controller administra uma View ou serie de views relacionadas.
+Um Controller é um grande policial que dirige o transito, dependendo do que o usuário pediu vai encaminhar os pedidos para uma outra View ou para os dados.
+Ou seja, uma Controller faz encaminhamento de chamadas.
+
+Um usuário clica numa ação, por exemplo, um botão da pagina web (view), isso gera um pedido (requisição) que é atendido pelo Controller, que dependendo da chamada
+vai encaminhar e retornar uma View ao usuário onde vai “renderisar” os dados (model)
+
+Esse processo de pedido (requisição) tratado pelo Controller e devolvido como View é feito usando de “Routing” ou encaminhamento
+
+Para realizar estes encaminhamentos o MVC utiliza uma convenção, podemos dizer assim, como a seguir:
+
+public class HomeController : Controller {
+	public IActionResult Index() {
+		return View(); 
+	}
+}
+
+Para realizar estes encaminhamentos o MVC utiliza uma convenção, como a seguir:
+public class HomeController : Controller {
+	public IActionResult Index() {
+		return View();
+	}
+}
+
+Home, é o nome do Controller. O nome é seguido da palavra “Controller".
+
+Index é o nome de uma ação da Controller Home e de uma View ao mesmo tempo. Quer dizer que quando o usuário lançar uma requisição para acessar Index,
+o Controller deve ter um método (ação) com o mesmo nome e ao mesmo tempo, deve existir uma View para ser retornada com o mesmo nome.
+
+Assim a rota ficaria Home/Index
+
+Quando eu colocar essa rota no navegador, o Framework já sabe por convenção que o primeiro é o Controller e o segundo é uma View.
+Isso é routing.
+
+Logo você estará chamando ao HomeController e solicitando uma View chamada Index.
+
+Um outro detalhe importante, se você escrever apenas o nome da Controller no navegador, por convenção a Controller vai tentar rotear essa chamada para um método Index.
+Quando criamos um projeto Asp.NET MVC, o processo de criação da solução já organiza o projeto com as pastas Controllers e Views.
 
 
 
