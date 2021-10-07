@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LojaVirtual",
+    "\\LojaVirtual\\LojaWeb",
+    "\\LojaVirtual\\LojaWeb\\Views\\Home"
   ],
-  "SelectedNode": "\\secao01",
   "PreviewInSolutionExplorer": false
 }

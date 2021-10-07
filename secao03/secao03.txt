@@ -1,0 +1,90 @@
+Seção 3: Desenvolvimento de aplicações Web Básico
+
+
+11. O que vamos aprender nesta seção?
+
+12. O que é Asp .NET?
+
+
+O Asp.NET é um Framework dentro do .NET
+O .NET é uma grande biblioteca de classes que disponibiliza código reutilizável. Dentro dessa grande biblioteca temos sub bibliotecas e uma delas é o Asp.NET
+A finalidade desta sub biblioteca é a criação de aplicações Web.
+
+
+É uma evolução do ASP clássico, Active Server Pages.
+Mais do que uma simples evolução, trouxe mais segurança e robustez ao desenvolvimento web.
+
+É possível programar em qualquer linguagem para Asp.Net (Vb, C#, etc)
+
+Dentro da sub biblioteca Asp.NET nos temos outras sub bibliotecas também.
+
+MVC
+Web API
+SignalR
+WebForms
+Blazor
+
+13. O que é o padrão MVC? Model, view, controller
+
+
+Model, view, controller
+
+MVC é um padrão arquitetural que organiza uma aplicação Web em três partes.
+
+Model, View e Controller
+
+ou
+
+Modelo, Vista e Controlador
+
+
+Cada um destes elementos tem uma função específica:
+
+
+Model, é a camada onde vamos tratar os dados da aplicação Web.
+View, é onde aqueles dados vão ser apresentados ao usuário.
+Controller, é o elemento central que vai mediar entre os dois anteriores.
+
+
+O padrão MVC permite ter flexibilidade e é fácil de manter já que cada camada ter sua finalidade específica.
+Você não mistura Dados com Views, nem Controller com Dados, etc.
+
+- A camada de Views vai somente conter código para visualizar dados para o usuário.
+- A camada de Controllers vai somente conter o código que permita acessar views ou
+dados.
+- A camada de Dados (Model) vai se encarregar apenas de tratar os dados e de
+encaminhar isso para o controller.
+
+
+
+Usuário -> View (Página Web ) -> Controller -> Dados (Model)
+	<-                    <-            <-
+
+
+Por esta organização e flexibilidade é que o padrão MVC é um dos mais usados hoje em dia na Web em geral.
+
+Mesmo outras linguagens e Frameworks adotam padrões similares ao MVC.
+
+Por exemplo, MVVM.
+
+Mas a ideia de todos eles é a mesma, separar cada parte da aplicação Web segundo a sua finalidade.
+
+
+
+14. Controllers
+
+
+
+
+
+15. Breve introdução à WEB
+
+16. Criação de Models
+
+17. Uso de Viewbags e Viewdata
+
+18. Mapeamento de urls com MVC. URLs personalizadas.
+
+19. Views Asp .NET
+
+20. Recapitulando
