@@ -390,4 +390,44 @@ https://localhost:44326/mensagem/saudacao/Eduardo/Monteiro
 
 19. Views Asp .NET
 
+Views
+
+O que é uma View
+
+A visão (View) é responsável por tudo que o usuário final visualiza, toda a interface, informação, não importando sua fonte de origem, é exibida graças a camada de visão.
+Quando um usuário solicita uma View, o pedido chega no Controller na Action que corresponde.
+
+O método (Action) Index (por exemplo) retorna um ViewResult que instrui o MVC para renderizar a View e retornar o HTML. Não informamos para o MVC qual View seria
+usada, por convenção o MVC tenta encontrar a View automaticamente.
+
+A convenção é que a View tem o mesmo nome que o método Action e esta contida em uma pasta ~/Views/Home/Index.cshtml.
+
+
+Views e métodos no controller...
+
+Podemos retornar outros resultados a partir de métodos action, além de strings e objetos ViewResult.
+Por exemplo, se retornamos um Redirect, fazemos com que o navegador seja redirecionado para outra URL.
+Estes objetos são conhecidos coletivamente como action results (resultados de ação), e eles são todos derivados da classe ActionResult. O sistema de action result nos
+permite encapsular e reutilizar respostas comuns em ações (actions).
+
+
+Usando saída dinâmica
+Quando vimos a utilização de ViewBag e ViewData, conhecemos pela primeira vez o uso de sintaxe Razor.
+
+Razor?
+O Razor foi criado para simplificar a codificação nas aplicações ASP .NET, usando a sintaxe do Razor o código fica mais fácil de digitar, mais simples e legível.
+O Razor é bastante inteligente e possui um parse que conhece as marcações HTML, a sintaxe da linguagem VB .NET (VBHTML) e C# (CSHTML).
+O Razor não é uma nova linguagem vamos usar os nossos conhecimentos de VB .NET ou C# para usar o Razor e não o contrário.
+
+Renderizando outras Views
+
+Uma sobrecarga do método Action também demonstra como podemos dizer ao MVC para renderizar uma View específica em resposta a um pedido.
+
+Aqui está a declaração : return View(“Sucesso”);
+Outro exemplo: return View("Index");
+
+
+
+
+
 20. Recapitulando
