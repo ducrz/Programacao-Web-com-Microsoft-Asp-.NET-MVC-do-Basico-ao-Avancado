@@ -290,6 +290,104 @@ Na view
 
 18. Mapeamento de urls com MVC. URLs personalizadas.
 
+
+Mapeamento de URLs com MVC
+
+
+
+Regras padrão para mapeamento das URLs (routing)
+
+Um método Action possui um mapeamento um-para-um com uma interação do usuário como: clicar um link, informar um url no navegador e submeter um formulário;
+
+Cada uma dessas interações do usuário resulta em uma requisição que é enviada ao servidor, sendo que em cada caso a URL da requisição inclui informação que o
+framework MVC usa para invocar um método Action;
+
+Assim, quando um usuário informa uma URL no navegador, a aplicação MVC usa as regras de roteamento que são definidas nas configurações da aplicação web para
+realizar o parse da URL e determinar o caminho do controller e o controller então determina o método Action apropriado para tratar a requisição.
+
+
+Por padrão a URL de uma requisição é tratada como um sub caminho que inclui o nome do controller seguido pelo nome da Action (ação).
+
+Exemplo:
+- Se um usuário informar a URL: http://dominio.com/Produtos/Categorias o sub caminho é /Produtos/Categorias;
+- As regras de roteamento tratam "Produtos" como o nome do controller e "Categorias" como o nome da Action;
+- Desta forma a regra de roteamento invoca o método Categorias do controller Produtos a fim de processar a requisição;
+- Se a URL terminar com /Produtos/Detalhes/5 o roteamento padrão trata "Detalhes" como sendo o nome da Action e o método Detalhes do controller Produtos será invocado para
+processar a requisição;
+- O valor 5 na URL será passado para o método "Detalhes" como um parâmetro;
+
+Routing personalizado
+
+A configuração de routing por “default” já soluciona a maior parte das situações que podemos encontrar.
+
+Si precisarmos de uma url muito específica, podemos adicionar regras de routing nas configurações.
+
+Deste jeito o .Net vai saber como dirigir uma chamada usando aquela url.
+
+
+Como se faz isso?
+
+Atributo Route
+
+Dada uma action eu posso definir uma rota específica para essa action. Podemos por exemplo pegar a action "Saudacao" da Controller Home e modificar a rota com o
+atributo Route:
+
+public class HomeController : Controller{
+public IActionResult Index(){
+return View();
+} [
+Route("/Mensagem/Saudacao")]
+public IActionResult Saudacao(){
+return Content("Olá usuário");
+}
+}
+
+Desta forma podemos agrupar todas as mensagens na rota "Mensagem".
+
+Por tipo de request. Eu posso ter duas actions na controller respondendo à mesma url.
+
+
+public class HomeController : Controller{
+
+public IActionResult Index() {
+return View();
+} [
+Route("/Mensagem/Criacao")]
+public IActionResult Create(){
+string html = "<form method='post'>" +
+"<input type='text' name='mensagem'/>" +
+"<input type='submit' value='Salvar'/>" +
+"</form>";
+return Content(html, "text/html");
+} [
+Route("/Mensagem/Criacao")]
+[HttpPost]
+public IActionResult Create(string mensagem)
+{
+//Logica para guardar a mensagem da base de dados
+return Content($"A mensagem { mensagem } foi salva no banco de dados");
+}
+}
+
+
+Por segmento de url ou seja, posso especificar que um parâmetro vai ser enviado como parte da url.
+
+public class HomeController : Controller{
+public IActionResult Index()
+{
+return View();
+} [
+Route("/Mensagem/Saudacao/{nome}")]
+public IActionResult Saudacao(string nome){
+return Content($"Olá usuário {nome}");
+}
+}
+
+https://localhost:44326/mensagem/saudacao/Eduardo/Monteiro
+
+
+
+
 19. Views Asp .NET
 
 20. Recapitulando

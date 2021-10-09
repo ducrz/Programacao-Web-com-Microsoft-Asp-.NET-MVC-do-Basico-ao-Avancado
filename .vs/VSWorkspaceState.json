@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LojaVirtual",
+    "\\LojaVirtual\\LojaWeb",
+    "\\LojaVirtual\\LojaWeb\\Controllers",
+    "\\LojaVirtual\\LojaWeb\\Views",
+    "\\LojaVirtual\\LojaWeb\\Views\\Home",
+    "\\LojaVirtual\\LojaWeb\\wwwroot"
   ],
-  "SelectedNode": "\\LojaVirtual.sln",
+  "SelectedNode": "\\LojaVirtual\\LojaWeb\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -29,6 +29,17 @@ namespace LojaWeb.Controllers
         {
             return View();
         }
+        [Route("/Home/Mensagem/Saudacao/{nome}/{sobrenome}")]
+        public IActionResult SaudacaoComNome(string nome, string sobrenome)
+        {
+            return Content($"Olá usuário {nome} {sobrenome}");
+        }
+
+        [Route("/Home/Mensagem/Saudacao/")]
+        public IActionResult Saudacao(int id)
+        {
+            return Content($"Olá usuário { id }");
+        }
 
 
     }
