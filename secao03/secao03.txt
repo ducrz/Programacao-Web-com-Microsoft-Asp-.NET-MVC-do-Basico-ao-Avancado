@@ -244,6 +244,50 @@ se utilize dos modelos para realizar consultas, cálculos e todas as regras de ne
 
 17. Uso de Viewbags e Viewdata
 
+Usando saída dinâmica
+
+A principal função de uma aplicação web é construir e exibir saída dinâmica; no MVC, é uma tarefa do Model construir dados e um trabalho, da controller preparar a saída e
+da view renderizar e exibir HTML de forma que os dados são passados do controller para view.
+
+Uma forma de passar dados do controller para a view é usar o objeto ViewBag. Ele é um membro da classe base Controller. O ViewBag é um objeto dinâmico para o qual
+você pode atribuir propriedades arbitrárias, tornando esses valores disponíveis em qualquer view que for posteriormente processado.
+
+Para exibir na view preciso de um bloco de código Razor que exibe a informação contida na ViewBag.
+
+O código Razor inicia com um caractere @ e não usa caractere para indicar o fim do bloco.
+
+O Razor foi criado para simplificar a codificação nas aplicações ASP .NET, usando a sintaxe do Razor o código fica mais fácil de digitar, mais simples e legível.
+
+Como se usa isso?
+
+No controller:
+ViewBag.Titulo = “Lista de clientes”;
+Na view
+<title>@ViewBag.Titulo</title>
+
+
+ViewData
+
+Basicamente é a mesma coisa que o ViewBag mas é utilizado de forma diferente
+
+Internamente ViewData utiliza ViewBags.
+
+Tem alguma diferença técnica muito mínima entre um e outro.
+
+Logo, utilizar um ou outro depende mais de uma questão prática mais que técnica.
+
+
+ViewData
+
+No controller
+
+ViewData[“Titulo”] = “Lista de clientes”;
+Na view
+<title>@ViewData["Titulo"] </title>
+
+
+
+
 18. Mapeamento de urls com MVC. URLs personalizadas.
 
 19. Views Asp .NET
