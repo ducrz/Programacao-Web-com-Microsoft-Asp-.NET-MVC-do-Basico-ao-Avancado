@@ -1,0 +1,78 @@
+Seção 4: Desenvolvimento de aplicações Web Intermediário
+
+
+21. O que vamos aprender nesta seção?
+
+
+22. Controller tipados. Como construir um controller para um model.
+
+Model
+Quando desenvolvemos com ASP.Net MVC temos três elementos básicos, a Model, a View e o Controller.
+Já vimos o que a camada Model pode fazer. Agora vamos ver como podemos passar informação para a View usando um Model ou melhor, um Viewmodel.
+
+
+
+Quando trabalhamos com Views, podemos passar informação desde a Controller para a View para poder exibir essas informações.
+Imagina ter um cadastro de clientes por exemplo. Um usuário poderia querer exibir o Id e o Nome de um cliente no navegador.
+
+
+Como fazer no ASP.Net?
+
+Primeiro modifica a Controller desta forma:
+public ActionResult Details(int id) {
+	var Cliente = ClasseDaCamadaModelCliente.BuscarPorID(id);
+	return View(Cliente);
+}
+
+
+Para exibir isso na View:
+
+
+@model MVC_.net_core.Models.Cliente
+<div>
+<h4>Cliente</h4>
+<hr />
+<dl class="row">
+<dt class = "col-sm-2">
+@Html.DisplayNameFor(model => model.id)
+</dt>
+<dd class = "col-sm-10">
+@Html.DisplayFor(model => model.id)
+</dd>
+<dt class = "col-sm-2">
+@Html.DisplayNameFor(model => model.nome)
+</dt>
+<dd class = "col-sm-10">
+@Html.DisplayFor(model => model.nome)
+</dd>
+</dl>
+</div>
+
+
+Notem que há duas coisas importantes aqui, fazer o “import” do Model na View.
+
+@model MVC_.net_core.Models.Cliente
+
+E usar HTML Helpers para acessar e mostrar as propriedades da classe Cliente.
+
+@Html.DisplayNameFor(model => model.id)
+@Html.DisplayFor(model => model.id)
+
+Lambdas são usadas no parametro do método helper
+
+
+
+
+23. Extensibilidade de controllers.
+
+24. Views (shared, partial). Trabalhando com um Viewmodel.
+
+25. O que é Razor? Exemplo de uso.
+
+26. Mapeamento Model->ViewModel
+
+27. Model Binding.
+
+28. Data annotations. Validação de dados.
+
+29. Recapitulando

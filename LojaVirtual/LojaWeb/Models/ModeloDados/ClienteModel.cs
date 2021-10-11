@@ -15,5 +15,8 @@ namespace LojaWeb.Models.ModeloDados
         public string Telefone { get; set; }
 
         public string Endereco { get; set; }
+
+        public string NumeroCartaoCredito { get; set; }
+
     }
 }

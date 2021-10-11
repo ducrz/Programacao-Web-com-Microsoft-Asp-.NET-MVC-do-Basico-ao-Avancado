@@ -8,6 +8,6 @@
     "\\LojaVirtual\\LojaWeb\\Views\\Home",
     "\\LojaVirtual\\LojaWeb\\wwwroot"
   ],
-  "SelectedNode": "\\LojaVirtual\\LojaWeb\\Startup.cs",
+  "SelectedNode": "\\LojaVirtual\\LojaWeb\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }
