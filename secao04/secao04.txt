@@ -153,6 +153,33 @@ Para integrar uma Partial View numa View usamos o código:
 
 25. O que é Razor? Exemplo de uso.
 
+É um recurso de linguagem que nos permite adicionar lógica de programação numa página web.
+Ou seja, nos permite utilizar código escrito em C# dentro de páginas HTML.
+
+Razor é uma View Engine.
+
+Para isto usamos uma marcação especial começando com @
+
+@{
+//Código C#
+string mensagem = “Olá”;
+}
+
+Se usado dentro de um elemento HTML podemos usar diretamente o @
+
+<p>@mensagem</p>
+
+O código C# escrito dentro do bloco Razor será convertido a HTML uma vez que a aplicação é compilada.
+
+Ou seja, não é possível executar código do lado do “cliente”.
+
+Uma vez que solicitamos ao servidor uma página, e esta página contem código Razor, o servidor vai realizar
+as operações necessárias para devolver uma página para o cliente onde o código Razor foi convertido em HTML.
+
+
+
+
+
 26. Mapeamento Model->ViewModel
 
 27. Model Binding.
