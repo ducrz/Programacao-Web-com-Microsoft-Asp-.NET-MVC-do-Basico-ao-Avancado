@@ -12,20 +12,30 @@ namespace LojaWeb.Controllers
     {
         public IActionResult Index()
         {
-            List<ClienteViewModel> listCliente = new List<ClienteViewModel>() { new ClienteViewModel() { Nome = "Eduardo", Endereco="", Telefone ="123456" } };
+            List<ClienteViewModel> listCliente = new List<ClienteViewModel>() { new ClienteViewModel() { Nome = "Eduardo", Endereco="", Telefone ="123456" },
+                                                    new ClienteViewModel() { Nome="Pablo", Endereco="", Telefone="45678" } };
             return View(listCliente);
         }
 
         public IActionResult Create()
         {
-            Mensagem("");
+            //Mensagem("");
             return View();
         }
         [HttpPost]
         public IActionResult Create(ClienteViewModel cliente)
         {
+            if(string.IsNullOrEmpty(cliente.Nome))
+                Mensagem("Campo Nome é Obrigatório", "Error");
+            else {
 
-            return View("Details");
+            List<ClienteViewModel> listCliente = new List<ClienteViewModel>();
+            listCliente.Add(cliente);
+            Mensagem("Cliente Salvo com Sucesso", "Success");
+            return View("Index",listCliente);
+
+            }
+            return View(cliente);
         }
     }
 }

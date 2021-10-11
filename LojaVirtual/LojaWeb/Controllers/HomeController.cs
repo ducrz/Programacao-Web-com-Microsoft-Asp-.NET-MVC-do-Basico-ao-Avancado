@@ -22,7 +22,7 @@ namespace LojaWeb.Controllers
         {
             ViewData["Title"] = "Política de Privacidade";
             ViewBag.nome = "Eduardo";
-           Mensagem("Info: Politica de Privacidade");
+           Mensagem("Info: Politica de Privacidade","Informação");
 
            return View();
         }
@@ -32,7 +32,7 @@ namespace LojaWeb.Controllers
         {
             if (string.IsNullOrEmpty(Nome))
             {
-                Mensagem("Erro: Insira um Nome");
+                Mensagem("Erro: Insira um Nome","Error");
                 return View();
             }
 

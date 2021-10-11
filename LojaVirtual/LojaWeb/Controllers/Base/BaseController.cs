@@ -8,9 +8,20 @@ namespace LojaWeb.Controllers.Base
 {
     public class BaseController : Controller
     {
-        public void Mensagem(string mensagem)
+        public void Mensagem(string mensagem, string tipoMensagem)
         {
-
+            if (tipoMensagem == "Error"){
+                ViewData["Error"] = "Erro";
+            }
+            else if (tipoMensagem == "Warning"){
+                ViewData["Warning"] = "Warning";
+            }
+            else if (tipoMensagem == "Sucess"){
+                ViewData["Sucess"] = "Success";
+            }
+            else{
+                ViewData["Informação"] = "Informação";
+            }
             ViewData["Mensagem"] = mensagem;
 
         }

@@ -5,11 +5,10 @@
 
 <h2>Meu Nome: @ViewBag.Nome</h2>
 
-
-<h4>@ViewData["Mensagem"]</h4>
+<partial name="_mensagensPartial" />
 
 <form action="privacy" method="post">
     Id<input type="text" name="id" />
     Nome <input type="text" name="Nome" />
-         <input type="submit" name="Salvar" value="Salvar" />
+    <input type="submit" name="Salvar" value="Salvar" />
 </form>

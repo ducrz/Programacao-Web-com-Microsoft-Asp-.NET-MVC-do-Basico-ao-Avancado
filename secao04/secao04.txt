@@ -122,6 +122,35 @@ Evite colocar nos Controllers código de regras de negocio ou de acesso a dados.
 
 24. Views (shared, partial). Trabalhando com um Viewmodel.
 
+Partial Views
+
+São uma forma de reutilizar código Html. Toda vez que uma funcionalidade de View é comum a varias Views, podemos criar uma partial View e reutilizar-la.
+
+Evitar duplicação de código.
+Reutilizar e modularizar Views.
+
+
+Partial Views
+
+Há duas formas de utilizar uma partial View.
+
+Partial View relativa ao Controller onde estamos usando a View.
+Partial View Shared.
+Com a primeira opção, a partial View será apenas para utilizar dentro do contexto daquele controller.
+A segunda opção é para criar uma partial View de uso geral, que possa ser usado em todas as Views da aplicação.
+
+Partial Views
+O nome da Partial View por convenção começa com um _
+O nome da Partial View por convenção termina com “Partial”
+Uma Partial View pode usar um Model ou ViewModel
+
+
+Para integrar uma Partial View numa View usamos o código:
+
+<partial name=“_NomeDaViewPartial” model=“Model” />
+
+
+
 25. O que é Razor? Exemplo de uso.
 
 26. Mapeamento Model->ViewModel

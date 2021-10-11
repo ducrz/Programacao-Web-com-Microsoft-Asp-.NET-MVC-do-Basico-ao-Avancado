@@ -111,3 +111,6 @@ C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-d
 C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Mensagem\MensagemBemVindo.cshtml.g.cs
+C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\Index.cshtml.g.cs
+C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\Create.cshtml.g.cs
+C:\Users\eduardo\Source\Repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LojaVirtual\LojaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_mensagensPartial.cshtml.g.cs
