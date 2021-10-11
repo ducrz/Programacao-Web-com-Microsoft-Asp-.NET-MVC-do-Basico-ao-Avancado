@@ -319,4 +319,90 @@ Ou usando Razor e Html helper
 
 28. Data annotations. Validação de dados.
 
+Validação com Data Annotations
+
+ASP.Net implementa uma forma de validação de ViewModels, que a partir de certos atributos (Data Annotations),
+podemos validar se os dados do Model respeitam as regras definidas.
+
+Uma validação completa consiste em três partes:
+
+Os atributos da ViewModel
+O código de validação ao nível Controller
+As mensagens ao nível de View
+
+
+Os atributos da ViewModel
+
+A cada campo da nossa classe cliente podemos adicionar atributos. Por exemplo,
+poderíamos dizer que um Cliente valido é aquele que tem um Nome.
+Ou seja, sem Nome o Cliente é inválido. A partir daqui queremos que o usuário seja
+obrigado a inserir sempre um Nome para o Cliente.
+Conseguimos isso usando o atributo (Data Annotations) [Required]
+public class Cliente
+{
+public int Id {get; set;}
+[Required]
+public string Nome {get; set;}
+}
+
+
+O código de validação ao nível Controller
+
+Para validar se o Model enviado para o Controller é válido usamos o seguinte código, ModelState.IsValid
+
+
+[HttpPost]
+public IActionResult Create(Cliente cliente)
+{
+if (ModelState.IsValid())
+{
+//Se for válido podemos salvar no banco de dados
+}
+return View();
+}
+
+
+As mensagens ao nível de View
+
+Fechamos o ciclo adicionando na View uma forma de visualizar quais os campos que estão com erro de validação.
+
+<input asp-for="Nome" class="form-control">
+<span asp-validation-for="Nome"> </span>
+
+
+Existem vários tipos de atributos que podemos usar:
+
+Regular expressions
+Required
+Range
+MinLength
+MaxLength
+Compare
+
+
+Atributo Display
+
+Também podemos usar atributos como o Display para alterar a forma em que mostramos o nome do campo ao usuário.
+
+
+public class Cliente{
+public int Id {get; set;}
+[Required]
+[Display(Name = "Nome e sobrenome")]
+public string Nome {get; set;}
+}
+
+Outros exemplos
+
+[MaxLength(50, ErrorMessage = "The {0} can not have more than {1} characters")]
+public string Name { get; set; }
+
+
+[Range(0, 150, ErrorMessage = "The Age should be between 0 and 150 years")]
+public int Age { get; set; }
+
+
+
 29. Recapitulando
+
+

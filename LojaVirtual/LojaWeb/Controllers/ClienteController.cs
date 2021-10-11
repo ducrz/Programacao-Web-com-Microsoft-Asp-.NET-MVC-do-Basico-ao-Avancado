@@ -25,15 +25,11 @@ namespace LojaWeb.Controllers
         [HttpPost]
         public IActionResult Create(ClienteViewModel cliente)
         {
-            if(string.IsNullOrEmpty(cliente.Nome))
-                Mensagem("Campo Nome é Obrigatório", "Error");
-            else {
-
-            List<ClienteViewModel> listCliente = new List<ClienteViewModel>();
-            listCliente.Add(cliente);
-            Mensagem("Cliente Salvo com Sucesso", "Success");
-            return View("Index",listCliente);
-
+            if (ModelState.IsValid){
+                List<ClienteViewModel> listCliente = new List<ClienteViewModel>();
+                listCliente.Add(cliente);
+                Mensagem("Cliente Salvo com Sucesso", "Success");
+                return View("Index", listCliente);
             }
             return View(cliente);
         }
