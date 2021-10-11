@@ -65,6 +65,61 @@ Lambdas são usadas no parametro do método helper
 
 23. Extensibilidade de controllers.
 
+
+ASP.Net Controllers
+
+Um controller é uma classe. Como toda classe podemos criar extensões.
+
+Ou seja, podemos criar nossos próprios Controllers com funções específicas.
+
+Desta forma podemos reutilizar código usado numa controller.
+
+
+Um exemplo disto é o envio de mensagens de informação, erro ou sucesso.
+
+Com certeza esse tipo de mensagem será usada em toda parte no sistema.
+
+Em lugar de repetir esse código, podemos criar um Controller do qual os outros Controllers do sistema possam herdar.
+
+Lembram de herança?
+
+
+Como se faz isto?
+Podemos criar uma nova Controller vazia, sem métodos.
+
+public class MeuControladorController : Controller{
+public void Mensagem(string mensagem)
+{}
+}
+
+
+Logo podemos fazer que os nossos Controllers herdem do MeuControlador no lugar de Controller:
+
+public class ClienteController : MeuControladorController{ }
+
+
+Bem simples, agora todo o código que esta no MeuControllador é acessível a Controller Cliente.
+
+public class ClienteController : MeuControladorController{
+public ActionResult Index()
+{
+Mensagem("Você esta na tela de index.");
+return View(new List<Cliente>());
+}
+}
+
+
+Para finalizar
+
+Este é apenas um exemplo dos usos da extensibilidade de Controller.
+Toda vez que um dado código se repete mais de uma vez num Controller, é provável que seja um candidato a estar num Controller de base.
+
+Lembrar sempre que a Controller tem apenas a funcionalidade de intermediar entre a Model e as Views.
+
+Evite colocar nos Controllers código de regras de negocio ou de acesso a dados.
+
+
+
 24. Views (shared, partial). Trabalhando com um Viewmodel.
 
 25. O que é Razor? Exemplo de uso.

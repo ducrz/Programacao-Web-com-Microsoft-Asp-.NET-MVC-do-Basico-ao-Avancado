@@ -1,4 +1,5 @@
-﻿using LojaWeb.Models;
+﻿using LojaWeb.Controllers.Base;
+using LojaWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LojaWeb.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         //Get
         public IActionResult Index()
@@ -21,13 +22,21 @@ namespace LojaWeb.Controllers
         {
             ViewData["Title"] = "Política de Privacidade";
             ViewBag.nome = "Eduardo";
+           Mensagem("Info: Politica de Privacidade");
+
            return View();
         }
         //Post
         [HttpPost]
         public IActionResult Privacy(string Id, string Nome)
         {
-            return View();
+            if (string.IsNullOrEmpty(Nome))
+            {
+                Mensagem("Erro: Insira um Nome");
+                return View();
+            }
+
+            return View("Index");
         }
         [Route("/Home/Mensagem/Saudacao/{nome}/{sobrenome}")]
         public IActionResult SaudacaoComNome(string nome, string sobrenome)

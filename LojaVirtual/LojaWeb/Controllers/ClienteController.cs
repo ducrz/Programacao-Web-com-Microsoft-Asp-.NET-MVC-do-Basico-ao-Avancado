@@ -1,4 +1,5 @@
-﻿using LojaWeb.Models;
+﻿using LojaWeb.Controllers.Base;
+using LojaWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LojaWeb.Controllers
 {
-    public class ClienteController : Controller
+    public class ClienteController : BaseController
     {
         public IActionResult Index()
         {
@@ -17,6 +18,7 @@ namespace LojaWeb.Controllers
 
         public IActionResult Create()
         {
+            Mensagem("");
             return View();
         }
         [HttpPost]
