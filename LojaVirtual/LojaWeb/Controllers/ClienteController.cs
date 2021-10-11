@@ -37,5 +37,9 @@ namespace LojaWeb.Controllers
             }
             return View(cliente);
         }
+        public IActionResult Details(string nome)
+        {
+            return View();
+        }
     }
 }

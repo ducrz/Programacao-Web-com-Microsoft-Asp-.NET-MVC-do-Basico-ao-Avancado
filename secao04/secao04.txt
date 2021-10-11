@@ -240,6 +240,83 @@ return clienteViewModel;
 
 27. Model Binding.
 
+Model Binding no ASP.Net
+
+Model binding se refere ao mapeamento entre uma requisição HTTP e uma Action num Controller.
+
+Os parâmetros da Action são mapeados em relação aos parâmetros da requisição HTTP.
+
+Estes parâmetros podem ser do tipo simples, integers, strings, ou complexos como classes com propriedades.
+
+Um exemplo de mapeamento de binding é no caso da pagina de Details que já vimos antes.
+
+No caso, o parâmetro é passado na request.
+
+/Cliente/Details/1
+
+Na action, o Controller vai fazer este mapeamento automático igualando o valor 1, ao parâmetros da Action int.
+
+public ActionResult Details(int Id)
+
+
+Mesmo neste caso o mapeamento é feito automaticamente por nome, no caso, Id. Se vemos a configuração de rotas do MVC encontramos o seguinte:
+
+app.UseEndpoints(endpoints =>{
+endpoints.MapControllerRoute(
+name: "default",
+pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+O MVC vai então mapear qualquer valor da URL desde que respeitando esta formula.
+
+Perceba que todo mapeamento feito automaticamente é feito graças ao nome dos parâmetros que deve ser o mesmo.
+
+Assim, se quisermos passar tb o nome da pessoa no Details podemos fazer o seguinte:
+
+public ActionResult Details(int Id, string Nome)
+
+Mas é claro que ao tentar rodar o exemplo o valor de Nome será null. Para que funcione teríamos que mudar a URL:
+
+/Cliente/Details/1?Nome=Jose
+
+Notem que "Nome" na Url e o parâmetros da Action "Nome" são idênticos, é ali que a magia acontece.
+
+Para poder fazer o Binding, ASP.Net vai buscar os parâmetros na request na seguinte ordem:
+
+Forms
+Routes
+Query Strings
+
+O model binding funciona nos dois sentidos, View->Controller e Controller->View.
+
+Assim como podemos passar parâmetros simples, também podemos passar tipos complexos.
+
+Se eu tenho uma classe "Cliente" com 3 campos, Id, Nome, Email.
+
+Eu posso criar uma View usando este modelo e usando um Form, submeter esses dados para o Controller.
+
+ASP.Net vai mapear cada elemento HTML a uma propriedade do modelo "Cliente".
+
+Para isto vai usar as propriedades "name" do elemento HTML e mapear o elemento do mesmo nome na classe "Cliente".
+
+<input type="text" name="Nome" />
+
+
+O model binding também pode ser feito usando TagHelper
+
+
+<input asp-for="Telefone" class="form-control" />
+
+
+Ou usando Razor e Html helper
+
+@Html.TextBoxFor(cliente => cliente.Nome);
+
+
+
+
+
+
 28. Data annotations. Validação de dados.
 
 29. Recapitulando
