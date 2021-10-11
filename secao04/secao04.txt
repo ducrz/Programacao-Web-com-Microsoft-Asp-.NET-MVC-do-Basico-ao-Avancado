@@ -182,6 +182,62 @@ as operações necessárias para devolver uma página para o cliente onde o código R
 
 26. Mapeamento Model->ViewModel
 
+
+Mapeamento Model-ViewModel
+
+Model - ViewModel
+
+Um Model, ou modelo, se refere a uma camada do MVC, aquela camada que maneja os dados da aplicação.
+
+Para manipular dados geralmente criamos classes. Essas classes chamamos também de Model.
+
+Uma vez que manipulamos dados e utilizamos classes para isso, pode não ser uma boa opção passar dados que correspondem a uma camada Model especifica para as Views.
+As vezes um Model de negócio pode conter informações que são sensíveis.
+
+Então, como solucionar o problema e apenas apresentar na View os dados que o cliente pode ver?
+
+Usamos ViewModels.
+
+As ViewModels são classes simplificadas cuja única finalidade é apresentar dados nas Views ou enviar dados das Views ate o Controller.
+
+Para poder trafegar a informação da camada de visualização ate a camada Model precisamos copiar um ViewModel a Model ou vice-versa.
+
+Para isso usamos mapeamento.
+
+Pode ser automático usando alguma ferramenta (automapper) Ou podemos fazer isso manualmente.
+
+Vamos então, ver o uso Model-ViewModel e mapeamento manual...
+
+Vamos ver isto funcionando...
+
+O mapeamento manual implica igualar as propriedades de um objeto no outro:
+
+Var clienteViewModel = new ClienteViewModel();
+Var cliente = new ClienteModel();
+
+
+Posso criar uma classe que faça a conversão:
+
+
+Public class Cliente_ClienteViewModelMapper
+{
+public Cliente ClienteViewModel_ClienteMapper(ClienteViewModel clienteViewModel)
+{
+var cliente = new ClienteModel();
+//mapping
+cliente.Nome = clienteViewModel.Nome;
+return cliente;
+}
+public ClienteViewModel Cliente_ClienteViewModelMapper(ClienteModel clienteModel)
+{
+var clienteViewModel = new ClienteViewModel;
+//mapping
+clienteViewModel.Nome = clienteModel.Nome;
+return clienteViewModel;
+}
+}
+
+
 27. Model Binding.
 
 28. Data annotations. Validação de dados.
