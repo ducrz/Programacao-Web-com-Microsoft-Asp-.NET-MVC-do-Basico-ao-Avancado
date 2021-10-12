@@ -66,6 +66,61 @@ Dica Visual Studio: ctor + 2xtab, cria construtor.
 
 32. Helpers. Como construir um Helper.
 
+
+Helpers
+
+São métodos estáticos que possuem código que nos ajudam na renderização de Views.
+
+Temos dois tipos no ASP.Net:
+Html Helpers
+Tag Helpers
+
+Podemos criar nossos próprios Helpers e assim poder reutilizar código de View, assim como evitar duplicação.
+
+HTML Helpers
+
+Temos muitos Helpers que nos ajudam a renderizar Views no ASP.Net, por exemplo:
+
+@Html.DisplayNameFor(model => model.id)
+
+O legal é que ASP.Net nos permite criar os nossos próprios Helpers
+
+
+HTML Helpers
+
+public static class HtmlExtender{
+public static IHtmlContent DisplayTrueFalse(bool valueBooleano){
+var span = new TagBuilder("span");
+if (valueBooleano){
+span.AddCssClass("badge badge-success");
+span.InnerHtml.Append("Verdadeiro");
+}
+else{
+span.AddCssClass("badge badge-danger");
+span.InnerHtml.Append("Falso");
+}
+return span;
+}
+}
+
+TAG Helpers
+É o mesmo principio, só que aplicado as Tags
+[HtmlTargetElement("nome-pessoa")]
+public class RazorTagHelper : TagHelper
+{
+public string nome { get; set; }
+public override void Process(TagHelperContext context, TagHelperOutput output)
+{
+var span = new TagBuilder("span");
+span.AddCssClass("badge badge-info");
+span.InnerHtml.Append(nome);
+output.Content.AppendHtml(span);
+}
+}
+
+
+
+
 33. Criado uma aplicação Web do zero.
 
 34. Uso de componentes de terceiros no desenvolvimento Web

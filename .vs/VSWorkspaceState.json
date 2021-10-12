@@ -4,10 +4,11 @@
     "\\LojaVirtual",
     "\\LojaVirtual\\LojaWeb",
     "\\LojaVirtual\\LojaWeb\\Controllers",
+    "\\LojaVirtual\\LojaWeb\\Models",
     "\\LojaVirtual\\LojaWeb\\Views",
     "\\LojaVirtual\\LojaWeb\\Views\\Home",
     "\\LojaVirtual\\LojaWeb\\wwwroot"
   ],
-  "SelectedNode": "\\LojaVirtual\\LojaVirtual.sln",
+  "SelectedNode": "\\LojaVirtual\\LojaWeb\\Models\\ClienteViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,8 +1,11 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Seja Bem-vindo</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @LojaWeb.Helpers.HtmlHelpers.DisplayVerdadeiroFalso.DisplayTrueFalse(true)
+    <nome-pessoa nome="Eduardo"></nome-pessoa>
 </div>

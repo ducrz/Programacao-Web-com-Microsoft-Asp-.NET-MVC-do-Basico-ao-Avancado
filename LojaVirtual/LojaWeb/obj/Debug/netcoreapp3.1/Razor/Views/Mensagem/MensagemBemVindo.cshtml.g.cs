@@ -27,7 +27,7 @@ using LojaWeb.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f38781be34c8f9d866a31d211403715aa6b4ae7", @"/Views/Mensagem/MensagemBemVindo.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ed359012766f9257587d4b3f261443f0d7542356", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4db12b399f94c146beb68debf1b076d184ed6543", @"/Views/_ViewImports.cshtml")]
     public class Views_Mensagem_MensagemBemVindo : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
