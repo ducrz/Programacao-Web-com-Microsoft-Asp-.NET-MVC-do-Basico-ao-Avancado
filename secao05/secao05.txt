@@ -1,0 +1,75 @@
+Seção 5: Desenvolvimento de Aplicações Web Avançado
+
+
+30. O que vamos aprender nesta seção?
+
+31. Mapeamento de Model, ViewModel com Automapper
+
+Mapeamento de classes
+Já vimos como usar um Model e também um ViewModel. Vimos quando é adequado usar um ou o outro.
+
+Numa aplicação Web que utiliza ViewModels, vamos precisar uma forma de copiar os dados pertinentes da ViewModel para a Model.
+Assim os dados vão passando de camada em camada da nossa aplicação.
+
+
+Mapeamento de classes
+
+Poderíamos simplesmente usar um método onde copiaríamos os dados de um objeto para o outro de forma manual.
+Para não duplicar código, teríamos ainda que pensar numa forma de fazer isso criando código que possa ser reutilizável.
+
+Automapper
+
+
+Mapeamento de classes
+Precisamos apenas algumas configurações...
+- Instalar o pacote Automapper
+- Criar uma classe de configuração
+- Configurar o Automapper no inicio do sistema
+- Injetar isso onde for necessário.
+
+Automapper
+- Criar uma classe de configuração
+
+public class AutomapperProfile : Profile {
+	public AutomapperProfile() {
+		CreateMap<Cliente, ClienteViewModel>().ReverseMap();
+	}
+}
+
+
+Mapeamento de classes
+
+- Configurar o Automapper no inicio do sistema Startup.cs
+
+services.AddAutoMapper(typeof(Startup));
+
+
+Mapeamento de classes
+
+- Injetar isso onde for necessário.
+
+
+var clienteModel = new Cliente();
+var clienteViewModel = _mapper.Map<ClienteViewModel>(clienteModel);
+Return View(clienteViewModel);
+
+
+Como injetar o IMapper no Controller Cliente para poder usar o Autommaper.
+
+
+Dependencies > Manage NuGet Packages> AutoMapper.Extensions.Microsoft.DependencyInjection
+
+Dica Visual Studio: ctor + 2xtab, cria construtor.
+
+
+
+
+32. Helpers. Como construir um Helper.
+
+33. Criado uma aplicação Web do zero.
+
+34. Uso de componentes de terceiros no desenvolvimento Web
+
+35. Uso de DataTables
+
+36. Recapitulando

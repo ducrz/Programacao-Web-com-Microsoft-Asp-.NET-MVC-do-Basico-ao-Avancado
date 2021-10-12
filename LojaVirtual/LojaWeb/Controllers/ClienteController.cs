@@ -5,11 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using LojaWeb.Models.ModeloDados;
 
 namespace LojaWeb.Controllers
 {
     public class ClienteController : BaseController
     {
+        private readonly IMapper _mapper;
+
+        public ClienteController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
         public IActionResult Index()
         {
             List<ClienteViewModel> listCliente = new List<ClienteViewModel>() { new ClienteViewModel() { Nome = "Eduardo", Endereco="", Telefone ="123456" },
@@ -20,7 +28,11 @@ namespace LojaWeb.Controllers
         public IActionResult Create()
         {
             //Mensagem("");
-            return View();
+            var cliente = new ClienteModel() { CPF="1", Endereco="a", Id=1, Nome="Eduardo", NumeroCartaoCredito="1", Telefone="123" };
+
+            var clienteVM = _mapper.Map<ClienteViewModel>(cliente);
+
+            return View(clienteVM);
         }
         [HttpPost]
         public IActionResult Create(ClienteViewModel cliente)
