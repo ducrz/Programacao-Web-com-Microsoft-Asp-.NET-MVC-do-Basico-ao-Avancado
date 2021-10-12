@@ -186,4 +186,41 @@ https://getbootstrap.com
 
 35. Uso de DataTables
 
+Instalar e usar componente DataTable
+
+Vamos instalar e usar o componente DataTable na nossa aplicação Web.
+
+DataTable
+
+É um componente que adiciona funcionalidades estendidas as Tables HTML.
+
+https://datatables.net/
+
+Adiciona capacidade de busca, ordenação e paginação.
+
+Como funciona?
+
+Fazer o download dos arquivos Js e CSS.
+Copiar para a pasta que corresponde no nosso projeto Web.
+Ou utilizar a opção CDN.
+
+DataTable
+
+<table class="table" id="minha-tabela">
+<thead>
+...
+</thead>
+<tbody>
+...
+</tbody>
+</table>
+<script>
+$(document).ready(function() {
+$(‘#minha-tabela').DataTable();
+} );
+</script>
+
 36. Recapitulando
+
+
+
