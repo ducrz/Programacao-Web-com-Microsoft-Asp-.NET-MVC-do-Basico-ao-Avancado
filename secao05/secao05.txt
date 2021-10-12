@@ -123,7 +123,18 @@ output.Content.AppendHtml(span);
 
 33. Criado uma aplicação Web do zero.
 
-34. Uso de componentes de terceiros no desenvolvimento Web
+Vamos dar inicio a primeira aplicação Web
+
+
+- Criação do projeto
+- Criação das Views, Controllers, camada de negócio e camada de dados.
+- Aplicando o aprendido até agora no curso
+
+Projeto LocadoraDeCarros
+
+
+
+34. Uso de componentes de Terceiros no Desenvolvimento Web
 
 35. Uso de DataTables
 
