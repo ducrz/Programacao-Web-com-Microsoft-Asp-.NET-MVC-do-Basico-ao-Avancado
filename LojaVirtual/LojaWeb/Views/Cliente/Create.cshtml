@@ -28,6 +28,15 @@
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <select class="js-example-basic-single form-control" name="estados">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="SC">Santa Catarina</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
@@ -37,4 +46,12 @@
 <div>
     <a asp-action="Index">Voltar</a>
 </div>
+@section Scripts{ 
+
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+}
 

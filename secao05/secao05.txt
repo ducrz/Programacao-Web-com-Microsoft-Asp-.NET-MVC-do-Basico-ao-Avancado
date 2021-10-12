@@ -136,6 +136,54 @@ Projeto LocadoraDeCarros
 
 34. Uso de componentes de Terceiros no Desenvolvimento Web
 
+Instalar e usar componentes JS de terceiros
+
+Apesar que os componentes Html avançaram bastante, há ainda alguns componentes de terceiros que adicionam funcionalidades aos componentes de base.
+
+Por exemplo, quando construímos uma table na nossa aplicação, vimos que implementar uma busca ou paginação acaba sendo um trabalho manual.
+
+
+
+Select 2
+
+É um componente que trabalha igual que uma combo box porém, com funcionalidades estendidas.
+
+https://github.com/select2/select2
+https://select2.org
+
+Pode ser instalado no seu projeto Web a partir do Nuget.
+
+
+Como funciona?
+Fazer o download dos arquivos Js e CSS.
+Copiar para a pasta que corresponde no nosso projeto Web.
+
+
+<select class=“MinhaSelect" name=“Estados">
+<option value=“RJ">Rio de Janeiro</option>
+<option value=“SP">São Paulo</option>
+</select>
+<script>
+$(document).ready(function () {
+$('.MinhaSelect').select2();
+});
+</script>
+
+@section Scripts{ 
+
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+}
+
+
+
+https://getbootstrap.com
+
+
+
 35. Uso de DataTables
 
 36. Recapitulando
