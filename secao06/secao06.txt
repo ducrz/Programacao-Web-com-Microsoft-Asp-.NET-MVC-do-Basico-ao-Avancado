@@ -126,7 +126,77 @@ public IActionResult Index(){
 
 
 
-40. Introdução ao Identity. Adicionando segurança à aplicações Web
+40. Introdução ao Identity. Adicionando segurança à aplicações Web.
+
+
+Segurança com .Net Core Identity
+
+É uma API do .Net Core que nos permite adicionar funcionalidade de segurança à nossa aplicação.
+Suporta interfaces e funcionalidades de login.
+
+Fornece também todo o código e funcionalidades para administrar usuários, senhas, confirmação de email, roles, etc.
+
+Quer dizer que Identity encapsula para nos todo o que precisamos para adicionar segurança as nossas aplicações.
+
+Todo está feito já. Apenas precisamos integrar isso no código.
+
+Segurança com .Net Core Identity
+
+- Inclui uma estrutura para guardar dados num banco de dados.
+- Suporte login com fornecedores de identidade externos como Facebook, Google, Twitter, etc
+- É uma solução completa.
+
+
+Como se faz isto?
+
+- Criar uma aplicação web e escolher tipo de autenticação, “Individual user accounts”
+- O Visual Studio vai criar automaticamente uma partial view de login.
+- Vai ser adicionado também referencias para acesso a banco de dados SqlServer.
+- Mais para frente no curso vou explicar como configurar e colocar para funcionar.
+
+
+Mais conceitos
+
+Temos dois conceitos a explorar, autenticação e autorização.
+
+Autenticar é identificar quem é você. Assim como você tem um RG e uma certidão de nascimento que me dizem quem você é,
+para um sistema também preciso identificar quem esta usando o sistema.
+
+Autorização se refere a segunda parte da segurança que é determinar quais as tuas permissões.
+
+Imagina que você chega num edifício comercial, a primeira coisa é se apresentar na segurança.
+Os agentes de segurança vão pedir teu RG, te identificar, te registrar e depois vão ligar para o local onde você se dirige.
+Se você foi identificado, o seguinte passo é te dar um cartão de acesso (autorização) que vai te permitir entrar e acessar certos locais.
+Identity funciona exatamente igual.
+Sem autenticação não existe autorização.
+
+Autenticação e autorização no Startup.cs
+
+Autorização é determinada pelo perfil do usuário.
+
+Podemos controlar isso de duas formas numa aplicação ASP.Net Core.
+- Usando Roles
+- Usando Claims.
+
+Roles e Claims
+
+Um Role é uma string que determina o perfil de um usuário. Assim você poderia definir que a aplicação terá apenas três perfis, Admin, Usuário, Cliente.
+Uma vez o usuário fez login no sistema, poderíamos dar acesso a ele somente a certos lugares do sistema.
+Para isso usamos um atributo no Controller ou na Action na qual queremos restringir o acesso para esse perfil.
+
+No final das contas, todos usam Policy.
+
+
+Roles e Claims
+
+Mas as vezes precisamos de informação mais detalhada. Por exemplo, podemos ter acesso a tela de vendas mas não podemos dar descontos.
+
+Nesse caso podemos usar Claims. Uma Claims é uma afirmação e se representa por um par Key, Value.
+
+Key = DarDesconto
+Value = false
+
+
 
 41. Introdução ao conceito de aplicação em camadas
 
