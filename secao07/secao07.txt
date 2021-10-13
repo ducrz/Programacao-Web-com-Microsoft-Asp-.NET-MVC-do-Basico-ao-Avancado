@@ -19,6 +19,8 @@ Folder Dados > Models
 
 47. Modelando o negocio - Parte 3
 
+
+
 48. Codando a controller
 
 49. Finalizando o front-end

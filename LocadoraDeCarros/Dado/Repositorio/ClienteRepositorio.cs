@@ -12,6 +12,7 @@ namespace Dados.Repositorio
     {
         private readonly IMapper _mapper;
 
+
         public ClienteRepositorio(IMapper mapper){
             _mapper = mapper;
         }
@@ -23,8 +24,23 @@ namespace Dados.Repositorio
 
             //Implementar a lógica de acesso a dados
 
+            clienteDM.Email = "ducatolico@gmail.com";
+            clienteDM.Nome = "Eduardo";
+
             return _mapper.Map<Cliente>(clienteDM);
 
+        }
+
+        public Cliente ObterClientePorEmail(string email)
+        {
+            ClienteDataModel clienteDM = new ClienteDataModel();
+
+            //Implementar a lógica de acesso a dados
+
+            clienteDM.Email = "ducatolico@gmail.com";
+            clienteDM.Nome = "Eduardo";
+
+            return _mapper.Map<Cliente>(clienteDM);
         }
     }
 }
