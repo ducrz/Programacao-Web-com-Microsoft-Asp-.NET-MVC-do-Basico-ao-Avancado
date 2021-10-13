@@ -11,6 +11,8 @@ Folder Dados > Models
 
 45. Modelando o negocio - Parte 1
 
+
+
 46. Modelando o negocio - Parte 2
 
 47. Modelando o negocio - Parte 3
