@@ -200,4 +200,49 @@ Value = false
 
 41. Introdução ao conceito de aplicação em camadas
 
+
+ASP.Net MVC e o desenvolvimento em camadas
+
+Quando desenvolvemos aplicações, a arquitetura da solução deve ser simples, clara, eficiente, rápida e ser fácil de manter e de alterar.
+Se toda vez que o cliente pedir uma alteração na aplicação (e isso acontece o tempo todo) você chega a conclusão que é difícil alterar, então há algo errado no design da
+solução.
+
+Se pelo contrário a alteração for fácil de fazer, naturalmente a solução foi bem desenhada.
+
+Do anterior podemos dizer que o melhor design é o que é mais fácil de alterar (estender). Ou pelo menos, é uma das coisas desejadas num bom design.
+Que seja uma solução simples.
+
+Como vimos, o MVC já é uma solução com divisão clara de funcionalidade. Você sabe quem é o Controller e para que ele serve, e assim uma View e um Model.
+Com cada um servindo a um proposito, é uma boa prática não misturar as coisas, por exemplo, colocando código de acesso a dados na Controller, já que o acesso a dados
+é responsabilidade da Model.
+
+
+Desenvolver em camadas é exatamente isso, separar as partes da solução de software em módulos ou camadas perfeitamente identificáveis e que servem a um
+proposito claro.
+
+Não existe um número preciso de camadas que uma aplicação deve ter. O número de camadas da tua aplicação vai responder ao problema que você tem que
+resolver.
+
+Aplicações simples tem pelo menos três camadas.
+
+- Camada de Apresentação, onde os dados são apresentados ao usuário por meio de Views.
+- Camada de Lógica de Negócios, onde as regras da aplicação são aplicadas as ações e aos dados.
+- Camada de Acesso aos Dados, onde os dados são guardados numa base de dados ou outro meio e onde você vai buscar dados para mostrar para o usuário.
+
+Aplicações complexas podem ter um número bem alto de camadas.
+
+O intuito aqui não é entrar na complexidade do modelo anterior e sim dar uma guia de como desenhar uma aplicação simples e organizada.
+O modelo anterior responde a um problema de um grande negocio de grande porte e NÃO se aplica a todos os casos.
+A sabedoria consiste em identificar qual é o modelo que melhor se adapta ao problema informático que você esta resolvendo.
+
+Como organizar camadas na nossa aplicação?
+
+Podemos usar pastas ou projetos.
+
+Ou os dois!
+
+
+
 42. Recapitulando
+
+
