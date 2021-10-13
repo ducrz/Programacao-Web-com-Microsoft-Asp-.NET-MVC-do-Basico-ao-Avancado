@@ -39,6 +39,93 @@ Folder Middlewares > FriendListMiddleware.cs
 
 39. Introdução à injeção de dependência
 
+
+Injeção de dependência
+
+É um padrão de projeto que nos permite reduzir o acoplamento entre diferentes módulos de uma aplicação.
+
+Acoplamento se refere a quando temos uma classe que precisa usar recursos de outra.
+
+Ou seja, que tem dependência.
+
+A injeção de dependência nos permite:
+
+- Facilidade de manutenção do código
+- Código testável (testes unitários)
+- Facilidade na reutilização de código
+
+
+Na prática a DI (injeção de dependência) é alcançada com um Container onde se encontram todas as configurações.
+
+A partir das configurações o Container sabe qual é a classe concreta que ele deve criar e injetar.
+
+A responsabilidade de criar instancias das classes dependentes fica agora por conta do Container e não mais do desenvolvedor.
+
+Com isto evitamos a criação de instancias com o uso sistemático da palavra New.
+
+
+Formas de Injeção de dependência
+
+Podemos injetar uma dependência das seguintes formas:
+- Construtor
+- Propriedades
+
+É recomendado sempre usar o Construtor da classe para realizar a injeção de dependência.
+
+
+Como se faz isto?
+
+Precisamos de uma classe e a sua interface.
+
+Precisamos configurar o Container.
+
+Por ultimo, injetar a dependência.
+
+
+Precisamos configurar o Container.
+
+public void ConfigureServices(IServiceCollection services){
+services.AddSingleton<ICliente, Cliente>();
+services.AddScoped<IFornecedorScoped, FornecedorScoped>();
+services.AddTransient<IProdutoTransient, ProdutoTransient>();
+}
+
+AddSingleton. Garante apenas uma única instância da classe durante o ciclo de vida da aplicação.
+AddScoped. Garante apenas uma única instância da classe, porém, durante apenas o ciclo de uma requisição.
+AddTransient. Será gerado uma nova instância da classe para cada solicitação de injeção.
+
+
+Por ultimo, injetar a dependência.
+
+
+public class HomeController : Controller{
+
+	private readonly ICliente _cliente;
+	private readonly IFornecedor _fornecedor;
+	private readonly IProduto _produto;
+
+public HomeController(
+	ICliente cliente,
+	IFornecedor fornecedor,
+	IProduto produto,
+){
+	_cliente = cliente;
+	_fornecedor = fornecedor;
+	_produto = produto;
+}
+
+public IActionResult Index(){
+	var clienteModel = _cliente.GetById(1);
+	var fornecedorModel = _fornecedor.GetById(1);
+	var produtoModel = _produto.GetById(1);
+	return View();
+}
+
+}
+
+
+
+
 40. Introdução ao Identity. Adicionando segurança à aplicações Web
 
 41. Introdução ao conceito de aplicação em camadas
