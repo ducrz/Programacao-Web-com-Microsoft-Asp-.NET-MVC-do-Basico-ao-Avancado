@@ -1,0 +1,46 @@
+Seção 6: Técnicas avançadas de desenvolvimento
+
+37. O que vamos aprender nesta seção?
+
+38. Introdução a Middlewares
+
+Middlewares
+
+Middlewares são software que são executados encadeados um no outro num Pipeline.
+
+A finalidade deles é tratar uma request HTTP.
+
+Cada Middleware é inserido num determinado ponto da cadeia para executar uma tarefa e passar o controle ao seguinte membro da cadeia.
+
+Cada Middleware pode tratar a request tanto na ida da chamada, quanto da volta na resposta.
+
+Cada Middleware pode num dado momento cortar a cadeia de chamadas e retornar ao cliente. Este procedimento é chamado Short Circuit.
+
+
+Esquema de como funcionam os Middlewares
+
+Request > Middleware > Response
+
+
+Middlewares são usados pelo próprio ASP.Net para configurar a aplicação.
+
+Cada Middleware adiciona uma peça de funcionalidade na cadeia de chamadas até chegar ao controller.
+
+
+Middlewares
+
+A ordem em que os Middlewares são chamados é bem importante. Se não estiver na ordem certa podem causar exceções na Pipeline.
+
+
+
+Folder Middlewares > FriendListMiddleware.cs
+
+
+
+39. Introdução à injeção de dependência
+
+40. Introdução ao Identity. Adicionando segurança à aplicações Web
+
+41. Introdução ao conceito de aplicação em camadas
+
+42. Recapitulando
