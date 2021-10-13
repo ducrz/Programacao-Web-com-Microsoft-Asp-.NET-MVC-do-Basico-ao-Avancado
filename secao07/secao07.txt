@@ -15,6 +15,8 @@ Folder Dados > Models
 
 46. Modelando o negocio - Parte 2
 
+
+
 47. Modelando o negocio - Parte 3
 
 48. Codando a controller

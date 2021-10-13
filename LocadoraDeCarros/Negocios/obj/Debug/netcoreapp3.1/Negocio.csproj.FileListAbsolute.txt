@@ -1,0 +1,10 @@
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\bin\Debug\netcoreapp3.1\Negocio.deps.json
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\bin\Debug\netcoreapp3.1\Negocio.dll
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\bin\Debug\netcoreapp3.1\Negocio.pdb
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.csproj.AssemblyReference.cache
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.AssemblyInfoInputs.cache
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.AssemblyInfo.cs
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.dll
+C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Negocios\obj\Debug\netcoreapp3.1\Negocio.pdb

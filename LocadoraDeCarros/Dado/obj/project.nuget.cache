@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "k4EHpAWbCIjQPEotj0EuXvx7fTK2fqJKgt8tP/ESoo4T3XOxupHa+UFjT8QsYifzlPlup9Ii29AsjeGOI/Z5KQ==",
+  "dgSpecHash": "/UBsnRbmc4OUlzDUntmAwbXL/hw7TnOaj+2yeId3E6f24CT3+NL6f4MufAg51NH8vIPOgMOfg9ATYTL85N5qjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\eduardo\\source\\repos\\ducrz\\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\\LocadoraDeCarros\\Dado\\Dados.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\eduardo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\eduardo\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
