@@ -1,0 +1,20 @@
+Seção 7: Desenvolvendo a base de codigo
+
+
+43. O que vamos aprender nesta seção?
+
+44. Modelo de dados
+
+Folder Dados > Models
+
+
+
+45. Modelando o negocio - Parte 1
+
+46. Modelando o negocio - Parte 2
+
+47. Modelando o negocio - Parte 3
+
+48. Codando a controller
+
+49. Finalizando o front-end
