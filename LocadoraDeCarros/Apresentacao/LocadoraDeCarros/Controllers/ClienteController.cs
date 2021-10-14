@@ -54,15 +54,18 @@ namespace LocadoraDeCarros.Controllers
 
                 //Validar Regras de Negocio
 
-
-                if (_clienteServico.Inserir(novoCliente)){
-                    Mensagem("O cliente foi inserido com sucesso.", "Info");
-                    return RedirectToAction(nameof(Index));
+                if (novoCliente.EmailEstaDuplicado(_clienteServico))
+                    ModelState.AddModelError("Email","O email já existe no banco de dados");
+                if (ModelState.IsValid)
+                {
+                    if (_clienteServico.Inserir(novoCliente))
+                    {
+                        Mensagem("O Cliente foi inserido com sucesso","Info");
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
-                else{
-                    Mensagem("Ocorreu algum erro ao inserir o novo cliente.", "Error");
-                    return View(clienteVM);
-                }
+                Mensagem("Ocorreu algum erro ao inserir o novo cliente.", "Error");
+                return View(clienteVM);               
                 
             }
             catch
@@ -88,18 +91,21 @@ namespace LocadoraDeCarros.Controllers
             {
                 var clienteEditado = _mapper.Map<Cliente>(clienteVM);
 
-                //Validar Regras de Negocio
+                if (clienteEditado.EmailEstaDuplicado(_clienteServico))
+                    ModelState.AddModelError("Email", "O email ja existe no banco de dados");
 
-                if (_clienteServico.Editar(clienteEditado))
+                if (ModelState.IsValid)
                 {
-                    Mensagem("O cliente foi editado com sucesso.", "Info");
-                    return RedirectToAction(nameof(Index));
+
+                    if (_clienteServico.Editar(clienteEditado))
+                    {
+                        Mensagem("O cliente foi editado com sucesso.", "Info");
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
-                else
-                {
-                    Mensagem("Ocorreu algum erro ao editar o cliente.", "Error");
-                    return View(clienteVM);
-                }
+
+                Mensagem("Ocorreu algum erro ao editar o cliente.", "Error");
+                return View(clienteVM);
             }
             catch
             {
