@@ -8,7 +8,7 @@ namespace LocadoraDeCarros.Models
 {
     public class ClienteViewModel
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo nome é obrigatorio.")]
         [Display(Name = "Nome e sobrenome")]

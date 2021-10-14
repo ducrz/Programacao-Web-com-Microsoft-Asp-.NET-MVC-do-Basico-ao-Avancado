@@ -11,6 +11,9 @@ namespace Negocio.RepositorioDados
 
         Cliente ObterCliente(int id);
         Cliente ObterClientePorEmail(string email);
-
+        List<Cliente> ObterListaCliente();
+        bool Inserir(Cliente novoCliente);
+        bool Editar(Cliente clienteEditado);
+        bool Excluir(int id);
     }
 }

@@ -17,6 +17,21 @@ namespace Dados.Repositorio
             _mapper = mapper;
         }
 
+        public bool Editar(Cliente clienteEditado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Excluir(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Inserir(Cliente novoCliente)
+        {
+            throw new NotImplementedException();
+        }
+
         public Cliente ObterCliente(int id)
         {
 
@@ -41,6 +56,11 @@ namespace Dados.Repositorio
             clienteDM.Nome = "Eduardo";
 
             return _mapper.Map<Cliente>(clienteDM);
+        }
+
+        public List<Cliente> ObterListaCliente()
+        {
+            throw new NotImplementedException();
         }
     }
 }

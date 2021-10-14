@@ -7,7 +7,6 @@ namespace Negocio.Models
 {
     public class Cliente{
 
-        private readonly IClienteServico _clienteServico;
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public string Endereco { get; private set; }
@@ -20,7 +19,7 @@ namespace Negocio.Models
         {
 
         }
-        public Cliente(int id, string nome, string endereco, string telefone, string email, string cnh, string cartaoCredito, IClienteServico clienteServico)
+        public Cliente(int id, string nome, string endereco, string telefone, string email, string cnh, string cartaoCredito)
         {
             Id = id;
             Nome = nome;
@@ -29,13 +28,14 @@ namespace Negocio.Models
             Email = email;
             CartaoDeCredito = cartaoCredito;
             CNH = cnh;
-            _clienteServico = clienteServico;
+            
         }
 
         //Regra de Negócio Implementada
-        public bool EmailEstaDuplicado()
-        {
-            return _clienteServico.ObterClientePorEmail(this.Email) != null;
+        public bool EmailEstaDuplicado(IClienteServico clienteServico){
+
+            return clienteServico.ObterClientePorEmail(this.Email) != null;
+
         }
     }
 }

@@ -25,5 +25,25 @@ namespace Negocio.ServicoNegocio
         {
             return _clienteRepositorio.ObterCliente(id);
         }
+
+        public List<Cliente> ObterListaClientes()
+        {
+            return _clienteRepositorio.ObterListaCliente();
+        }
+
+        public bool Editar(Cliente clienteEditado)
+        {
+            return _clienteRepositorio.Editar(clienteEditado);
+        }
+
+        public bool Inserir(Cliente novoCliente)
+        {
+            return _clienteRepositorio.Inserir(novoCliente);
+        }
+
+        public bool Excluir(int id)
+        {
+            return _clienteRepositorio.Excluir(id);
+        }
     }
 }

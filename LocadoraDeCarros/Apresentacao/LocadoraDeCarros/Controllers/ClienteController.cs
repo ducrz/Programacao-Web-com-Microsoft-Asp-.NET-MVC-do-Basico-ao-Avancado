@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using LocadoraDeCarros.Models;
-using Microsoft.AspNetCore.Http;
+using LocadoraDeCarros.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
+using Negocio.Models;
 using Negocio.ServicoNegocio.Base;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LocadoraDeCarros.Controllers
 {
-    public class ClienteController : Controller
+    public class ClienteController : BaseController
     {
         private readonly IClienteServico _clienteServico;
         private readonly IMapper _mapper;
@@ -25,7 +26,8 @@ namespace LocadoraDeCarros.Controllers
         // GET: ClienteController
         public ActionResult Index()
         {
-            return View();
+            var listaClientes = _clienteServico.ObterListaClientes();
+            return View(_mapper.Map<List<ClienteViewModel>>(listaClientes));
         }
 
         // GET: ClienteController/Details/5
@@ -38,63 +40,100 @@ namespace LocadoraDeCarros.Controllers
         // GET: ClienteController/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new ClienteViewModel());
         }
 
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ClienteViewModel clienteVM)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var novoCliente = _mapper.Map<Cliente>(clienteVM);
+
+                //Validar Regras de Negocio
+
+
+                if (_clienteServico.Inserir(novoCliente)){
+                    Mensagem("O cliente foi inserido com sucesso.", "Info");
+                    return RedirectToAction(nameof(Index));
+                }
+                else{
+                    Mensagem("Ocorreu algum erro ao inserir o novo cliente.", "Error");
+                    return View(clienteVM);
+                }
+                
             }
             catch
             {
-                return View();
+                Mensagem("Ocorreu alguma exceção ao inserir o novo cliente.", "Error");
+                return View(clienteVM);
             }
         }
 
         // GET: ClienteController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var clienteEditar = _mapper.Map<ClienteViewModel>(_clienteServico.ObterClientePorId(id));
+            return View(clienteEditar);
         }
 
         // POST: ClienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ClienteViewModel clienteVM)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var clienteEditado = _mapper.Map<Cliente>(clienteVM);
+
+                //Validar Regras de Negocio
+
+                if (_clienteServico.Editar(clienteEditado))
+                {
+                    Mensagem("O cliente foi editado com sucesso.", "Info");
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    Mensagem("Ocorreu algum erro ao editar o cliente.", "Error");
+                    return View(clienteVM);
+                }
             }
             catch
             {
-                return View();
+                Mensagem("Ocorreu alguma exceção ao editar o cliente.", "Error");
+                return View(clienteVM);
             }
         }
 
         // GET: ClienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var clienteExcluir = _mapper.Map<ClienteViewModel>(_clienteServico.ObterClientePorId(id));
+            return View(clienteExcluir);
         }
 
         // POST: ClienteController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(ClienteViewModel clienteExcluir)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
+            try{
+                if (_clienteServico.Excluir(clienteExcluir.Id)){
+                    Mensagem("O cliente foi excluido com sucesso.", "Info");
+                    return RedirectToAction(nameof(Index));
+                }
+                else{
+                    Mensagem("Ocorreu alguma erro ao excluir o cliente.", "Error");
+                    return View(clienteExcluir);
+                }
+                    
             }
-            catch
-            {
-                return View();
+            catch{
+                Mensagem("Ocorreu alguma exceção ao excluir o cliente.", "Error");
+                return View(clienteExcluir);
             }
         }
     }

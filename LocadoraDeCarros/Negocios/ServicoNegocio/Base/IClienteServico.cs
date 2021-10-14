@@ -8,8 +8,14 @@ namespace Negocio.ServicoNegocio.Base
     public interface IClienteServico{
 
         Cliente ObterClientePorEmail(string email);
+
         Cliente ObterClientePorId(int id);
-    
+
+        List<Cliente> ObterListaClientes();
+
+        bool Inserir(Cliente novoCliente);
+        bool Editar(Cliente clienteEditado);
+        bool Excluir(int id);
 
     }
 }
