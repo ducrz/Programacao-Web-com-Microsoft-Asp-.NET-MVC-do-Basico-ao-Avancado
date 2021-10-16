@@ -54,6 +54,96 @@ Existing Databse => Generated Data Model (Classes).
 
 52. Definição. Banco de dados. Modelo. Construção usando MSSQL.
 
+Trabalhando com bancos de dados (basico)
+
+Quando desenvolvemos com ferramentas da Microsoft nos temos a opção de usar diferentes bancos de dados do mercado.
+O mais usado por desenvolvedores .Net no entanto é o SqlServer.
+
+A ferramenta de administração de banco de dados neste caso é o SqlManagement Studio.
+
+As duas ferramentas tem uma versão Express, ou seja, que é gratuita para uso.
+
+Lembrando que as ferramentas Express tem sempre alguma limitação.
+
+Porém para uso em aplicativos ate de mediano porte funcionam bem.
+
+As duas ferramentas tem uma versão Express, ou seja, que é gratuita para uso.
+
+Lembrando que as ferramentas Express tem sempre alguma limitação.
+
+Porém para uso em aplicativos ate de mediano porte funcionam bem.
+
+
+De forma simples podemos dizer que um banco de dados agrupa entidades que tem alguma relação lógica entre eles.
+
+Banco de dados sistema de vendas:
+
+
+Uma entidade é representada no banco de dados por uma tabela.
+
+Entidades tem relações entre elas.
+
+Uma nota de venda possui um ou mais produtos vendidos. Chamamos isso de relação de 1 para muitos.
+Podemos tem três tipos de relações entre tabelas:
+
+1 a 0
+1 a N
+N a N
+
+
+Uma tabela tem campos ou atributos, cada campo representa uma informação.
+
+A tabela cliente pode ter:
+
+Nome
+Sobrenome
+CPF
+RG
+Etc...
+
+Mas existe um campo que é importante numa tabela, é o campo chave.
+
+O campo chave serve como identificador. Por isso os campos chave são chamados normalmente de ID.
+
+
+Um campo chave é indispensável para identificar relações entre tabelas.
+
+No exemplo, um Cliente pode ter uma relação com uma ou mais Vendas.
+
+Para isto a tabela Vendas deve ter um campo que represente ao Cliente, que pode ser o ClienteId.
+
+
+A criação do banco de dados, suas tabelas e suas relações, pode ser feita usando a ferramenta SqlManagement Express.
+
+
+Podemos criar os objetos de forma manual ou criando o que se chamam scripts Sql
+
+
+Microsoft SQL Server 2019 Express: https://www.microsoft.com/pt-br/sql-server/sql-server-downloads
+
+Microsoft SQL Server 2017 Express: https://www.microsoft.com/pt-br/download/details.aspx?id=55994
+
+SQL Server Management Studio: https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
+
+Azure Banco de Dados SQL: https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Sql%2Fservers%2Fdatabases
+
+
+Criando DB no SQL Server Management Studio:
+
+(localdb)\MSSQLLocalDB
+
+
+CriandoDBTabelas.sql
+
+InserindoESelect.sql
+
+
+Criando diagramas: Database Diagrams.
+
+
+
+
+
 53. ORM Entity Framework. Definição. Estrutura.
 
 54. Code first. Construindo banco de dados usando como modelo a estrutura de classes
