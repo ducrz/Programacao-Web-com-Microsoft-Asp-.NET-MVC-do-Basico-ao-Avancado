@@ -1,0 +1,63 @@
+Seção 8: Usando acesso a dados numa aplicação Web
+
+
+50. O que vamos aprender nesta seção?
+
+Adicionando acesso a dados.
+
+
+51. Introdução ao Entity Framework.
+
+
+Ajuda a abstrair o acesso ao banco de dados.
+
+É uma espécie de "camada" entre a aplicação e o banco de dados.
+
+
+ORM Entity Framework.
+
+Só para lembrar, o Entity Framework Core é um mapeador de banco de dados a objetos para .NET.
+
+Suporta consulta LINQ, rastreamento de alterações, atualizações e migrações de esquema.
+
+O EF Core trabalha com SQL Server, Banco de Dados SQL do Azure, SQLite, Azure Cosmos.
+
+
+É o que chamados de ORM.
+
+
+O Entity Framework Core é usado como uma forma de acessar um banco de dados e realizar operações.
+
+O EF Core vai mapear o banco de dados e apresentar classes que representam os elementos do banco de dados.
+
+
+Temos basicamente duas situações de mapeamento do banco:
+
+- Banco de dados existente (legado).
+- Banco de dados criado à partir da aplicação (code firts).
+
+O EF Core usa classes para representar as entidades do banco de dados. Logo, é possível criar
+as classes na aplicação e gerar o banco de dados a partir das classes. Isto é chamado de Code First.
+
+
+CODE FIRST
+
+
+Data Model (Classes) => Generated Database
+
+Existing Databse => Generated Data Model (Classes).
+
+
+
+
+
+
+52. Definição. Banco de dados. Modelo. Construção usando MSSQL.
+
+53. ORM Entity Framework. Definição. Estrutura.
+
+54. Code first. Construindo banco de dados usando como modelo a estrutura de classes
+
+55. Linq to entities.
+
+56. Recapitulando
