@@ -146,6 +146,34 @@ Criando diagramas: Database Diagrams.
 
 53. ORM Entity Framework. Definição. Estrutura.
 
+
+ORM Entity Framework
+Só para lembrar, o Entity Framework Core é um mapeador de banco de dados a objetos para .NET.
+
+Quer dizer que nos vamos ter uma representação do banco de dados em forma de classes.
+
+Cada classe representando uma entidade (tabela).
+
+Estas classes também possuem seus relacionamentos entre elas, podendo refletir relacionamentos reais do banco de dados ou não.
+
+Para que o mapeamento seja feito na nossa aplicação adicionamos o que se chama de contexto de banco de dados.
+
+DbContext
+
+No .Net o contexto nada mais é do que uma classe que herda do DbContext do Entity Framework.
+
+No DbContext nos podemos configurar os DbSets que correspondem as tabelas do banco de dados e os seus relacionamentos.
+Com a vantagem que podemos configurar relacionamentos que não existem no banco real.
+
+A partir de DbContext criado, é necessário configurar a string de conexão e alterar o Startup da nossa aplicação.
+
+    "SqlConnection": "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=LocadoraDB;Integrated Security=True;"
+
+
+(localdb)\MSSQLLocalDB
+
+
+
 54. Code first. Construindo banco de dados usando como modelo a estrutura de classes
 
 55. Linq to entities.

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dados.Models
 {
-    class CarroDataModel{
+    public class CarroDataModel{
 
         public int Id { get; set; }
         public string Marca { get; set; }
