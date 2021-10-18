@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Dados.Context
 {
-    public class LocadoraDbContext :DbContext
+    public class LocadoraDbContext : DbContext
     {
         public LocadoraDbContext(DbContextOptions options) : base(options)
         {

@@ -33,8 +33,8 @@ namespace LocadoraDeCarros
             services.AddDbContext<LocadoraDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
-            }
-            );
+            });
+
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();

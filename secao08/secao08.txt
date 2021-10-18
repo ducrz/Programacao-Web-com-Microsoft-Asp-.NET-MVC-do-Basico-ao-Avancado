@@ -174,7 +174,87 @@ A partir de DbContext criado, é necessário configurar a string de conexão e alte
 
 
 
-54. Code first. Construindo banco de dados usando como modelo a estrutura de classes
+54. Code first. Construindo banco de dados usando como modelo a estrutura de classes.
+
+
+Code First
+
+Se o banco de dados ainda não existe, nós podemos usar a técnica do Code First.
+
+Ou seja, código primeiro. Quer dizer que nos vamos escrever as nossas classes, que futuramente serão nossas entidades de banco de dados, e depois utilizar uma técnica
+para poder criar o banco de dados a partir das nossas classes.
+
+Esta técnica é Migrations.
+
+Migrations
+
+Para poder fazer o update da estrutura do banco de dados, nos utilizamos as Migrations. Instalar o pacote “tools” do entity framework.
+Migrations é uma funcionalidade executada por linha de comando que permite manipular a estrutura do banco de dados usando como base o modelo de classes da
+nossa aplicação.
+Toda alteração nas nossas classes vai ser propagado ao banco de dados usando Migrations.
+Também facilita e muito o versionamento do banco de dados e o rollback. Ou seja, a eventual volta atrás à versão antiga do banco de dados.
+
+Podemos aplicar Migrations desde a linha de comando ou usando o Package Manager Console desde o Visual Studio.
+
+[Command Line]
+dotnet ef migrations add <name of migration>
+
+[Package Manager console]
+add-migration <name of migration>
+
+
+Migrations, operações possíveis
+
+Add-migration, permite adicionar uma evolução ao banco de dados. Cada Migration possui um método Up e outro Down.
+
+Dessa maneira todas as alterações que adicionem algo ao banco de dados são colocadas no método Up, todas as alterações que deletem uma tabela, um campo, etc,
+são colocadas no método Down.
+
+[Command Line]
+dotnet ef migrations add <name of migration>
+
+[Package Manager console]
+add-migration <name of migration>
+
+
+Update-database. Uma vez que adicionei a migration, já posso atualizar o banco de dados. Para isto utilizo o update-database.
+Uma migration ou um grupo de migrations serão executadas e o banco de dados será atualizado.
+
+[Command line]
+dotnet ef database update
+
+[Package Manager Console]
+update-database
+
+
+Package manager console.
+
+View > Other Windows >  Package Manager Console.
+
+
+PM> add-migration bd-criacao
+
+
+add-migration bd-criacao -Project LocadoraDeCarros
+
+
+Adicionar: Microsoft.EntityFrameworkCore.Tools
+
+Importante: Checar o Default Project no Package Manager Console.
+
+Folder: Migrations.
+
+
+
+Executar: update-database
+
+add-migrations adiciona-telefones
+
+
+
+
+
+
 
 55. Linq to entities.
 

@@ -10,4 +10,3 @@ C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-d
 C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Dado\obj\Debug\netcoreapp3.1\Dados.csproj.CoreCompileInputs.cache
 C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Dado\obj\Debug\netcoreapp3.1\Dados.dll
 C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Dado\obj\Debug\netcoreapp3.1\Dados.pdb
-C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Dado\obj\Debug\netcoreapp3.1\Dados.csproj.CopyComplete
