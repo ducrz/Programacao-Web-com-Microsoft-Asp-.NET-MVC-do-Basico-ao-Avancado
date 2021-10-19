@@ -56,7 +56,7 @@ namespace LocadoraDeCarros.Controllers
             Mensagem("Usuário deslogado com sucesso.","Success");
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
-        [HttpPost]
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -79,6 +79,11 @@ namespace LocadoraDeCarros.Controllers
                 ModelState.AddModelError(string.Empty, "Erro de registro.");
             }
             return View(model);
+        }
+        [HttpGet]
+        public IActionResult AcessDenied()
+        {
+            return View();
         }
     }
 }

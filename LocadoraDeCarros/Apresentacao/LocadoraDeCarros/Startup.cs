@@ -47,6 +47,12 @@ namespace LocadoraDeCarros
             .AddEntityFrameworkStores<LocadoraDbContext>()
             .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "MeuCookie";
+                config.LoginPath = "/Conta/Login";
+            });
+
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();

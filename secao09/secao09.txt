@@ -79,4 +79,7 @@ INSERT INTO AspNetRoles values(2,'Balconista', 'Balconista', null)
 
 61. Autorizando acesso usando perfis (Roles) de usuario
 
-62. Recapitulando
+
+
+62. Recapitulando.
+

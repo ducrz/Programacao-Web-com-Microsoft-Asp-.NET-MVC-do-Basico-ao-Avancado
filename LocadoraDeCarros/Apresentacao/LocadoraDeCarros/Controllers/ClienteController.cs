@@ -8,9 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LocadoraDeCarros.Controllers
 {
+    [Authorize(Roles = "Admin, Balconista")]
+
     public class ClienteController : BaseController
     {
         private readonly IClienteServico _clienteServico;
@@ -74,7 +77,7 @@ namespace LocadoraDeCarros.Controllers
                 return View(clienteVM);
             }
         }
-
+        [Authorize]
         // GET: ClienteController/Edit/5
         public ActionResult Edit(int id)
         {
