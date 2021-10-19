@@ -253,9 +253,87 @@ add-migrations adiciona-telefones
 
 
 
-
-
-
 55. Linq to entities.
+
+Permite realizar consultas.
+
+
+Linq to Entities
+Linq nos permite realizar consultas nos mais variados origens de dados. Podemos realizar uma consulta Linq num banco de dados.
+É justamente isto que se chama de Linq to Entities.
+A consulta é criada em Linq e passada ao Entity Framework. Do EF vai passar pela camada ADO.Net e é esta camada que vai “traduzir” a consulta numa linguagem que o
+banco de dados de destino entenda, ou seja, SQL.
+
+
+Quando construímos consultas Linq to Entities, a consulta nem sempre é executada imediatamente no banco de dados.
+
+Isto é porque a consulta somente é enviada e executada no banco de dados quando houver um certo gatilho.
+
+var listaClientes = _contexto.Cliente.Where(cliente => cliente.Idade > 15);
+listaClientes = listaClientes.Where(cliente => cliente.Cidade == “São Paulo”);
+
+Uma consulta esta sendo construída, mas ainda não foi executada no banco de dados.
+
+
+O que chamo de gatilho é na verdade uma chamada a um método de extensão que fara finalmente a execução no banco de dados.
+
+Um desses métodos é o ToList()
+
+var listaClientes = _contexto.Cliente.Where(cliente => cliente.Idade > 15).ToList();
+
+
+Existem outros métodos que também executam a consulta no banco de dados:
+Max(), Count(), FirstOrDefault(), etc
+
+
+O Linq de forma geral, nos permite também realizar consultas sobre os itens relacionados à entidade principal que estamos consultando.
+
+Por exemplo, podemos ter uma tabela Estudantes e outra Cursos.
+
+Com certeza existe uma relação ali, onde um Estudante pode estar matriculado em vários cursos.
+
+Em Linq nos podemos criar uma consulta onde vamos buscar o Estudante e trazer ao mesmo tempo todos os cursos relacionados.
+
+Var listaEstudanteCursos = _contexto.Estudante.Where(estudante =>
+estudante.Curso.Ano == “2020”).ToList();
+
+“Curso” é outra entidade, veja que eu posso “navegar” pelas propriedades e fazer filtros.
+
+
+
+As propriedades de navegação, como no caso do exemplo “Curso”, são carregadas junto com a consulta e para isso o Entity Framework pode trabalhar em dois modos diferentes.
+
+Eager loading
+Lazy loading
+
+Eager loading
+
+No Eager loading as entidades relacionadas são carregadas ao mesmo tempo que a consulta principal, desta forma o Entity Framework só fara uma viagem ao banco de
+dados.
+Podemos carregar as entidades relacionadas com Eager loading usando o método de extensão Include.
+
+Var listaEstudanteCursos = _contexto.Estudante.Include(“Curso”).Where(estudante =>
+estudante.Curso.Ano == “2020”).ToList();
+
+Note que se eu estiver usando Eager loading e não especifico o Include, a instrução a seguir dará erro de null.
+
+
+Lazy loading
+
+No Lazy loading as entidades relacionadas não são carregadas imediatamente, o carregamento é adiado ate o momento que os dados da entidade relacionada forem necessários. Desta forma o
+Entity Framework fara uma viagem para carregar os dados da tabela Estudante e logo mais tarde, quando for necessário, fara outra consulta no banco de dados para recuperar os cursos.
+
+Var listaEstudanteCursos = _contexto.Estudante.Where(Id == 1).ToList();
+Var cursos2020 = listaEstudanteCursos.Where(estudante => estudante.Curso.Ano == “2020”);
+
+A desvantagem do Lazy loading é que sem querer você pode estar fazendo consultas no banco de dados que não eram necessárias.
+
+A vantagem é que se você esquece de fazer o Include, como no caso do Eager, você não tem erro de null ao tentar acessar a propriedade de navegação.
+
+
+Não existe uma solução ideal. Alguns programadores preferem usar Eager loading por conta de ter maior controle sobre o que é executado ou não no banco de dados.
+Outros preferem já ter tudo “pre-carregado” por se acaso for necessário durante o decorrer do programa o acesso a esses dados sem ter que alterar a consulta.
+
+
 
 56. Recapitulando

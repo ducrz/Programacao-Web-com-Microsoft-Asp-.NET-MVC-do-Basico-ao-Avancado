@@ -32,10 +32,15 @@ namespace Negocio.Models
         }
 
         //Regra de Negócio Implementada
-        public bool EmailEstaDuplicado(IClienteServico clienteServico){
-
-            return clienteServico.ObterClientePorEmail(this.Email) != null;
-
+        public bool EmailEstaDuplicado(IClienteServico clienteServico)
+        {
+            var clienteEmail = clienteServico.ObterClientePorEmail(this.Email);
+            if (clienteEmail != null)
+            {
+                if (clienteEmail.Id != this.Id)
+                    return true;
+            }
+            return false;
         }
     }
 }
