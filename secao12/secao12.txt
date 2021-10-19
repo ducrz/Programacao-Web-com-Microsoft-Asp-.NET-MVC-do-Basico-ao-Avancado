@@ -1,0 +1,4 @@
+Seção 12: Atualização do Curso
+
+66. DataTable server side para maior performance.
+
