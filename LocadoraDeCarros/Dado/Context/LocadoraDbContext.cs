@@ -1,4 +1,5 @@
 ﻿using Dados.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace Dados.Context
 {
-    public class LocadoraDbContext : DbContext
+    public class LocadoraDbContext : IdentityDbContext
     {
         public LocadoraDbContext(DbContextOptions options) : base(options)
         {

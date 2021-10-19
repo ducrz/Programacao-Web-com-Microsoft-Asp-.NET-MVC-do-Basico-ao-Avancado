@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace LocadoraDeCarros
 {
@@ -34,6 +35,17 @@ namespace LocadoraDeCarros
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
             });
+
+            services.AddIdentity<IdentityUser, IdentityRole>(config =>
+                {
+                config.Password.RequiredLength = 6;
+                config.Password.RequireDigit = false;
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequireUppercase = false;
+
+            })
+            .AddEntityFrameworkStores<LocadoraDbContext>()
+            .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
@@ -59,10 +71,12 @@ namespace LocadoraDeCarros
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
+        
             //Customs Middlewares
             app.UseMiddleware<FriendListMiddleware>(Configuration["SafeList"]);
+            
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

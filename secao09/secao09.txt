@@ -1,0 +1,81 @@
+Seção 09: Segurança com Identity Framework.
+
+57. O que vamos aprender nesta seção?
+
+58. O que é Indentity Framework?
+
+Como funciona a segurança em aplicações MVC
+
+
+ASP.NET Core Identity
+
+Para adicionar segurança vamos usar o pacote identity do ASP.NET Core.
+
+Identity é muito flexível e pode ser configurado de várias formas.
+
+Fornece várias opções para administrar o acesso dos usuários através do uso de 
+claims, roles e policy.
+
+Identity fornece uma estrutura de tabelas que podemos adicionar ao banco de dados para poder
+guardar estes dados.
+
+É possível simplificar o acesso usando apenas Users e Roles.
+
+Users, os usuários do sistema estão representados no Identity pela classe IdentityUser.
+
+Roles, os "papéis" de usuários disponíveis para a aplicação. Exemplo: Administrador, Financeiro, Frentista, etc.
+
+
+Pode-se usar Claims para deixar a segurança mais robusta.
+
+Uma Claim é uma informação associada ao User, ou seja, o Usuário "afirma" (claim) que ele tem
+determinada Role, ou mesmo que ele detenha certo acesso ao sistema.
+
+As Claims funcionam com um par key/value. O formato seria "Key= Nome, Value=João".
+
+Por exemplo, o usuário João pode ter uma outra Claim dizendo que ele é funcionário desde uma data X.
+
+"Key= DataContratacao, Value=10/09/2010"
+
+
+
+É possível usar uma combinação destes elementos de segurança:
+
+Users, Roles e Claims.
+
+Um Role pode ter vários usuários:
+
+
+ADMINISTRADOR  - João
+		 Jorge   -> ADMINISTRADOR, Email=jorge@gmail.com, Contratado-2010
+		  Lucas
+
+
+Identity fornece todas as ferramentas que são necessárias para as necessidades de uma aplicação Web.
+
+É altamente customizável, ou seja, se existe uma necessidade muito específica, que o Identity não
+resolve por padrão, existe a opção de implementar isto estendendo o próprio Identity.
+
+
+
+
+
+59. Configurando Identity Framework
+
+NuGet Package Manager> Microsoft.AspNetCore.Identity
+		       Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+insert.sql
+
+INSERT INTO AspNetRoles values(1,'Admin', 'Admin', null)
+INSERT INTO AspNetRoles values(2,'Balconista', 'Balconista', null)
+
+
+
+
+
+60. Como fazer Login, Logout e Register de usuario
+
+61. Autorizando acesso usando perfis (Roles) de usuario
+
+62. Recapitulando
