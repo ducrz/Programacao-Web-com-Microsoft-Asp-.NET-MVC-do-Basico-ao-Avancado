@@ -26,8 +26,15 @@ using LocadoraDeCarros.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\eduardo\source\repos\ducrz\Programacao-Web-com-Microsoft-Asp-.NET-MVC-do-Basico-ao-Avancado\LocadoraDeCarros\Apresentacao\LocadoraDeCarros\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74f386f7d404ffb2692d1003d41b016f29cfeaec", @"/Views/Cliente/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f317016799d6531c1bd0ccadac8e3bc4d1e895c9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"45f421dded3cbc7b8f82a88de297755245e5b8e1", @"/Views/_ViewImports.cshtml")]
     public class Views_Cliente_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<LocadoraDeCarros.Models.ClienteViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_mensagemPartial", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -71,7 +78,7 @@ using LocadoraDeCarros.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Delete</h1>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "74f386f7d404ffb2692d1003d41b016f29cfeaec5434", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "74f386f7d404ffb2692d1003d41b016f29cfeaec5726", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -166,9 +173,9 @@ using LocadoraDeCarros.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74f386f7d404ffb2692d1003d41b016f29cfeaec10826", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74f386f7d404ffb2692d1003d41b016f29cfeaec11118", async() => {
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-danger\" /> \r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74f386f7d404ffb2692d1003d41b016f29cfeaec11173", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74f386f7d404ffb2692d1003d41b016f29cfeaec11465", async() => {
                     WriteLiteral("Back to List");
                 }
                 );

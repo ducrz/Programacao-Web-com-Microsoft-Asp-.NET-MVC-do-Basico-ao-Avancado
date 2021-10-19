@@ -73,8 +73,9 @@ INSERT INTO AspNetRoles values(2,'Balconista', 'Balconista', null)
 
 
 
-
 60. Como fazer Login, Logout e Register de usuario
+
+
 
 61. Autorizando acesso usando perfis (Roles) de usuario
 
